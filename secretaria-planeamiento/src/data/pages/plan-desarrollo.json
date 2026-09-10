@@ -1,0 +1,160 @@
+{
+  "pageId": "plan-desarrollo",
+  "meta": {
+    "title": "Plan de Desarrollo Institucional 2026-2036 · Secretaría de Planeamiento UNLu",
+    "activeSection": "plan-desarrollo",
+    "heroTitle": "Plan de Desarrollo Institucional (PDI) 2026–2036",
+    "heroBadge": "PLANIFICACIÓN ESTRATÉGICA · UNLu",
+    "heroSubtitle": "Instrumento rector participativo y democrático que orienta el crecimiento, la transformación y las políticas de la Universidad Nacional de Luján para la próxima década."
+  },
+  "blocks": [
+    {
+      "id": "pdi-banner-propuesta",
+      "type": "cta-banner",
+      "props": {
+        "etiqueta": "DOCUMENTO PRINCIPAL · PDI 2026–2036",
+        "titulo": "Haga click aquí para acceder al Plan de Desarrollo Institucional (PDI) 2026-2036",
+        "url": "/Propuesta-PDI-2026-2036.pdf",
+        "textoBoton": "Acceder al PDI"
+      }
+    },
+    {
+      "id": "pdi-banner-resolucion",
+      "type": "cta-banner",
+      "props": {
+        "etiqueta": "RESOLUCIÓN H. CONSEJO SUPERIOR RESHCS: 492/2026",
+        "titulo": "Haga click aquí para consultar la Resolución de Aprobación del PDI (RESHCS: 492/2026)",
+        "url": "/Res-PDI.pdf",
+        "textoBoton": "Ver Resolución",
+        "estilo": "blanco"
+      }
+    },
+    {
+      "id": "pdi",
+      "type": "seccion-badge",
+      "props": {
+        "badge": "PRESENTACIÓN Y FUNDAMENTOS",
+        "titulo": "¿Qué es el PDI y cuál es su propósito?"
+      },
+      "children": [
+        {
+          "id": "pdi-intro",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<p>El <strong>Plan de Desarrollo Institucional (PDI) 2026–2036</strong> es el instrumento rector que define el rumbo estratégico, las prioridades académicas, científicas, de extensión, gestión y de infraestructura de la <strong>Universidad Nacional de Luján</strong> para la próxima década.</p><p>Aprobado por el <strong>Honorable Consejo Superior</strong> mediante la <strong>Resolución RESHCS: 492/2026</strong> (Expediente EXP 633/2024), el PDI orienta de manera vinculante las decisiones de gobierno, la gestión institucional y la asignación presupuestaria de la totalidad de las dependencias de la Universidad.</p><p>No se trata de un simple documento administrativo, sino de una <strong>declaración de voluntad colectiva</strong> que sintetiza las voces de estudiantes, docentes, nodocentes, graduados y organizaciones del territorio.</p>"
+          }
+        },
+        {
+          "id": "pdi-mision-vision-grid",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<div style=\"display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1rem;margin:1.25rem 0;\"><div style=\"background:#ffffff;border:1px solid #e2e8f0;border-top:3px solid #008541;border-radius:0.5rem;padding:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);\"><span style=\"font-size:0.6875rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:#008541;display:block;margin-bottom:0.25rem;\">MISIÓN INSTITUCIONAL</span><p style=\"font-size:0.8125rem;color:#374151;line-height:1.6;margin:0;\">Institución de educación superior pública, gratuita, autónoma y cogobernada que desarrolla actividades de docencia, investigación, extensión y vinculación orientadas al desarrollo integral de las personas y al fortalecimiento sostenible de la región y el país.</p></div><div style=\"background:#ffffff;border:1px solid #e2e8f0;border-top:3px solid #f9c540;border-radius:0.5rem;padding:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);\"><span style=\"font-size:0.6875rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:#b07d2c;display:block;margin-bottom:0.25rem;\">VISIÓN AL 2036</span><p style=\"font-size:0.8125rem;color:#374151;line-height:1.6;margin:0;\">Consolidarse hacia 2036 como una institución pública, inclusiva y territorialmente comprometida, que garantiza el derecho a la educación superior, produce conocimiento pertinente con impacto social y fortalece su presencia regional a través de una gestión democrática, transparente y sostenible.</p></div></div>"
+          }
+        },
+        {
+          "id": "pdi-datos-base",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<div style=\"background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #008541;border-radius:0.5rem;padding:1.25rem 1.5rem;margin:1.25rem 0;\"><h4 style=\"font-size:0.875rem;font-weight:700;color:#008541;text-transform:uppercase;letter-spacing:0.12em;margin:0 0 0.75rem;\">📊 Datos Institucionales al Inicio del PDI</h4><div style=\"display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:1rem;\"><div><strong style=\"display:block;font-size:1.25rem;color:#008541;\">27.692</strong><span style=\"font-size:0.8125rem;color:#4b5563;\">Estudiantes de grado/pregrado</span></div><div><strong style=\"display:block;font-size:1.25rem;color:#008541;\">750 - 1.000</strong><span style=\"font-size:0.8125rem;color:#4b5563;\">Titulaciones anuales</span></div><div><strong style=\"display:block;font-size:1.25rem;color:#008541;\">2.568</strong><span style=\"font-size:0.8125rem;color:#4b5563;\">Cargos docentes</span></div><div><strong style=\"display:block;font-size:1.25rem;color:#008541;\">767</strong><span style=\"font-size:0.8125rem;color:#4b5563;\">Trabajadores Nodocentes</span></div><div><strong style=\"display:block;font-size:1.25rem;color:#008541;\">49</strong><span style=\"font-size:0.8125rem;color:#4b5563;\">Carreras (26 grado + 23 posgrado)</span></div><div><strong style=\"display:block;font-size:1.25rem;color:#008541;\">6 Sedes</strong><span style=\"font-size:0.8125rem;color:#4b5563;\">Sede Central y Centros Regionales</span></div></div></div>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "metodologia-diagnostico",
+      "type": "seccion-badge",
+      "props": {
+        "badge": "CONSTRUCCIÓN PARTICIPATIVA",
+        "titulo": "¿Cómo se elaboró el PDI y cuál fue su diagnóstico de partida?"
+      },
+      "children": [
+        {
+          "id": "metodologia-etapas",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<p>La elaboración del PDI se rigió por la metodología en <strong>siete etapas</strong> aprobada por la <strong>Resolución RESHCS-LUJ: 0000202-24</strong>, garantizando un proceso abierto y transparente:</p><ol style=\"list-style:none;padding:0;margin:1rem 0;display:flex;flex-direction:column;gap:0.625rem;\"><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.6rem;height:1.6rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;\">1</span><div><strong>Autoevaluación Institucional:</strong> Concluida en 2023 con más de 6.000 encuestas a estudiantes, docentes, nodocentes y graduados.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.6rem;height:1.6rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;\">2</span><div><strong>Aprobación de Objetivos Estratégicos:</strong> Establecidos por el HCS mediante Resolución RESHCS 790/24.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.6rem;height:1.6rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;\">3</span><div><strong>Convocatoria Abierta:</strong> Convocatoria a toda la comunidad universitaria regulada por RESHCS 155/25.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.6rem;height:1.6rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;\">4</span><div><strong>Recepción de 137 Presentaciones:</strong> Iniciativas formuladas por todos los claustros y dependencias.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.6rem;height:1.6rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;\">5</span><div><strong>Análisis en Comisión Asesora Permanente:</strong> Evaluación detallada por la CAP de Planeamiento y Desarrollo.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.6rem;height:1.6rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;\">6</span><div><strong>Aprobación de Nómina de Proyectos:</strong> Aprobada por el HCS mediante Resolución RESHCS 482/25.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.6rem;height:1.6rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;\">7</span><div><strong>Aprobación Definitiva del PDI:</strong> Aprobación final y puesta en vigencia por Resolución RESHCS 492/2026.</div></li></ol>"
+          }
+        },
+        {
+          "id": "diagnostico-foda",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<div style=\"display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1.25rem;margin:1.25rem 0;\"><div style=\"background:#f8fafc;border:1px solid #cbd5e1;border-top:3px solid #008541;border-radius:0.5rem;padding:1.25rem;\"><strong style=\"color:#008541;font-size:0.9375rem;display:block;margin-bottom:0.5rem;\">💪 Fortalezas Institucionales Destacadas</strong><ul style=\"list-style:disc;padding-left:1.25rem;font-size:0.8125rem;color:#4b5563;line-height:1.6;\"><li>Crecimiento de matrícula (+4,8% anual) superior a la media nacional (3,3%).</li><li>Vocación regional con 5 sedes activas que atienden un área de 3,5 millones de habitantes.</li><li>33% de docentes con posgrado (por encima del 20% promedio nacional).</li><li>Sistema de Educación a Distancia (SIED) validado por CONEAU.</li><li>Predio consolidado de 27.384 m² y Campo Experimental de 250 hectáreas.</li></ul></div><div style=\"background:#f8fafc;border:1px solid #cbd5e1;border-top:3px solid #c0392b;border-radius:0.5rem;padding:1.25rem;\"><strong style=\"color:#c0392b;font-size:0.9375rem;display:block;margin-bottom:0.5rem;\">⚠️ Desafíos y Problemáticas a Resolver</strong><ul style=\"list-style:disc;padding-left:1.25rem;font-size:0.8125rem;color:#4b5563;line-height:1.6;\"><li>Alta tasa de abandono temprano (48,7% en los dos primeros años).</li><li>Desvío promedio de más de 6 años sobre la duración teórica de carreras.</li><li>37% de cargos docentes interinos que requieren regularización por concurso.</li><li>Estatuto Universitario sin actualización integral desde el año 2000.</li><li>Concentración de posgrados y necesidad de modernizar laboratorios e infraestructura.</li></ul></div></div>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "dimensiones",
+      "type": "seccion-badge",
+      "props": {
+        "badge": "EJES ESTRATÉGICOS",
+        "titulo": "¿Cuáles son las 6 Dimensiones del PDI y qué abarca cada una?"
+      },
+      "children": [
+        {
+          "id": "dim-intro",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<p>Las seis dimensiones estratégicas del PDI constituyen un sistema articulado donde cada función nutre y potencia a las demás:</p>"
+          }
+        },
+        {
+          "id": "dim-cards",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<div style=\"display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1rem;margin:1.25rem 0;\"><div style=\"background:#ffffff;border:1px solid #e2e8f0;border-left:4px solid #008541;border-radius:0.5rem;padding:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.04);\"><span style=\"font-size:0.6875rem;font-weight:700;color:#008541;text-transform:uppercase;\">DIMENSIÓN 1</span><strong style=\"display:block;color:#111827;font-size:0.9375rem;margin:0.25rem 0;\">Gobierno, Organización y Gestión</strong><p style=\"font-size:0.8125rem;color:#4b5563;margin:0;\">Inclusión y perspectiva interseccional, digitalización administrativa de trámites, reforma estatutaria, creación del Consejo Social, gestión ambiental (Ley Yolanda), internacionalización y bienestar integral.</p></div><div style=\"background:#ffffff;border:1px solid #e2e8f0;border-left:4px solid #008541;border-radius:0.5rem;padding:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.04);\"><span style=\"font-size:0.6875rem;font-weight:700;color:#008541;text-transform:uppercase;\">DIMENSIÓN 2</span><strong style=\"display:block;color:#111827;font-size:0.9375rem;margin:0.25rem 0;\">Docencia de Grado y Pregrado</strong><p style=\"font-size:0.8125rem;color:#4b5563;margin:0;\">Innovación didáctica, tutorías entre pares, asistente con IA generativa, observatorio de ingreso y retención, titulación intermedia (diplomaturas) y actualización curricular flexible.</p></div><div style=\"background:#ffffff;border:1px solid #e2e8f0;border-left:4px solid #008541;border-radius:0.5rem;padding:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.04);\"><span style=\"font-size:0.6875rem;font-weight:700;color:#008541;text-transform:uppercase;\">DIMENSIÓN 2P</span><strong style=\"display:block;color:#111827;font-size:0.9375rem;margin:0.25rem 0;\">Docencia de Posgrado</strong><p style=\"font-size:0.8125rem;color:#4b5563;margin:0;\">Creación de la Escuela de Graduados, diversificación y acreditación de posgrados CONEAU, expansión a Centros Regionales y vinculación interinstitucional internacional.</p></div><div style=\"background:#ffffff;border:1px solid #e2e8f0;border-left:4px solid #008541;border-radius:0.5rem;padding:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.04);\"><span style=\"font-size:0.6875rem;font-weight:700;color:#008541;text-transform:uppercase;\">DIMENSIÓN 3</span><strong style=\"display:block;color:#111827;font-size:0.9375rem;margin:0.25rem 0;\">Investigación Científica y Tecnológica</strong><p style=\"font-size:0.8125rem;color:#4b5563;margin:0;\">Plan integral de promoción de CyT, Sistema Integrado de Becas (estímulo, doctorales, posdoctorales), dobles dependencias con CONICET/CIC y Portal de Revistas Científicas (OJS).</p></div><div style=\"background:#ffffff;border:1px solid #e2e8f0;border-left:4px solid #008541;border-radius:0.5rem;padding:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.04);\"><span style=\"font-size:0.6875rem;font-weight:700;color:#008541;text-transform:uppercase;\">DIMENSIÓN 4 / 5</span><strong style=\"display:block;color:#111827;font-size:0.9375rem;margin:0.25rem 0;\">Extensión y Vinculación Comunitaria</strong><p style=\"font-size:0.8125rem;color:#4b5563;margin:0;\">Curricularización de la extensión en planes de estudio, fortalecimiento del CATEC, creación del Multiespacio de Integración, Sistema Integrado de Radios (SIR) y Canal Web TV.</p></div><div style=\"background:#ffffff;border:1px solid #e2e8f0;border-left:4px solid #008541;border-radius:0.5rem;padding:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.04);\"><span style=\"font-size:0.6875rem;font-weight:700;color:#008541;text-transform:uppercase;\">DIMENSIÓN 6</span><strong style=\"display:block;color:#111827;font-size:0.9375rem;margin:0.25rem 0;\">Infraestructura y Recursos</strong><p style=\"font-size:0.8125rem;color:#4b5563;margin:0;\">Equipamiento de aulas híbridas, nuevos laboratorios especializados (Toxicología, Robótica, Alérgenos, Microbiología), eficiencia energética, accesibilidad universal y modernización de bibliotecas.</p></div></div>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "beneficios-claustros",
+      "type": "seccion-badge",
+      "props": {
+        "badge": "IMPACTO EN LA COMUNIDAD",
+        "titulo": "¿Cómo beneficia el PDI a cada claustro de la UNLu?"
+      },
+      "children": [
+        {
+          "id": "claustros-grid",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<div style=\"display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1.25rem;margin:1rem 0;\"><div style=\"background:#f8fafc;border:1px solid #cbd5e1;border-radius:0.75rem;padding:1.25rem;\"><div style=\"display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;\"><span style=\"font-size:1.25rem;\">🎓</span><strong style=\"color:#008541;font-size:1rem;\">Para Estudiantes</strong></div><ul style=\"list-style:disc;padding-left:1.25rem;font-size:0.8125rem;color:#4b5563;line-height:1.6;\"><li>Tutorías entre pares y apoyo en materias críticas (matemáticas, escritura, ciencias).</li><li>Asistente virtual inteligente con IA generativa para consultas y orientación continua.</li><li>Titulación intermedia (diplomaturas intracurriculares) y flexibilización de correlatividades.</li><li>Ampliación de becas de comedor, conectividad, apuntes y viajes curriculares.</li><li>Aulas híbridas equipadas y campus virtual accesible.</li></ul></div><div style=\"background:#f8fafc;border:1px solid #cbd5e1;border-radius:0.75rem;padding:1.25rem;\"><div style=\"display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;\"><span style=\"font-size:1.25rem;\">🔬</span><strong style=\"color:#008541;font-size:1rem;\">Para Docentes e Investigadores</strong></div><ul style=\"list-style:disc;padding-left:1.25rem;font-size:0.8125rem;color:#4b5563;line-height:1.6;\"><li>Regularización de la planta docente interina mediante concursos ordinarios (meta del 85%).</li><li>Formación pedagógica continua en metodologías activas y tecnologías digitales.</li><li>Sistema Integrado de Becas CyT UNLu y fortalecimiento de convenios con CONICET/CIC.</li><li>Portal de Revistas Científicas con indexación y apoyo en formulación de proyectos internacionales.</li></ul></div><div style=\"background:#f8fafc;border:1px solid #cbd5e1;border-radius:0.75rem;padding:1.25rem;\"><div style=\"display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;\"><span style=\"font-size:1.25rem;\">🏢</span><strong style=\"color:#008541;font-size:1rem;\">Para el Personal Nodocente</strong></div><ul style=\"list-style:disc;padding-left:1.25rem;font-size:0.8125rem;color:#4b5563;line-height:1.6;\"><li>Digitalización integral de trámites, legajos y circuitos administrativos.</li><li>Capacitación permanente en gestión universitaria, análisis de datos y nuevas tecnologías.</li><li>Programas de salud ocupacional, ergonomía y condiciones de trabajo dignas en todas las sedes.</li><li>Posibilidad de dirección y participación en proyectos de investigación institucional.</li></ul></div><div style=\"background:#f8fafc;border:1px solid #cbd5e1;border-radius:0.75rem;padding:1.25rem;\"><div style=\"display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;\"><span style=\"font-size:1.25rem;\">🤝</span><strong style=\"color:#008541;font-size:1rem;\">Para Graduados y la Región</strong></div><ul style=\"list-style:disc;padding-left:1.25rem;font-size:0.8125rem;color:#4b5563;line-height:1.6;\"><li>Creación de la <strong>Escuela de Graduados</strong> (Art. 85 del Estatuto Universitario).</li><li>Creación del <strong>Consejo Social</strong> para articular con municipios, industrias y organizaciones.</li><li>Bolsa de trabajo activa, mentorías y programas de actualización profesional continua.</li><li>Convenios productivos, transferencia tecnológica mediante CATEC y proyectos ambientales.</li></ul></div></div>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "metas-monitoreo",
+      "type": "seccion-badge",
+      "props": {
+        "badge": "METAS, FINANCIAMIENTO Y SEGUIMIENTO",
+        "titulo": "¿Cuáles son las metas al 2036, cómo se financia y cómo se evalúa?"
+      },
+      "children": [
+        {
+          "id": "metas-cuantitativas",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<div style=\"background:#ffffff;border:1px solid #e2e8f0;border-radius:0.75rem;padding:1.25rem;margin:1rem 0;box-shadow:0 1px 4px rgba(0,0,0,0.05);\"><h4 style=\"font-size:0.875rem;font-weight:700;color:#111827;margin:0 0 0.75rem;text-transform:uppercase;letter-spacing:0.1em;\">🎯 Indicadores y Metas Estratégicas Decenales</h4><div style=\"overflow-x:auto;\"><table style=\"width:100%;text-align:left;font-size:0.8125rem;border-collapse:collapse;\"><thead style=\"background:#f1f5f9;color:#334155;border-bottom:2px solid #cbd5e1;\"><tr><th style=\"padding:0.625rem 0.75rem;\">Indicador Estratégico</th><th style=\"padding:0.625rem 0.75rem;\">Línea Base (2023)</th><th style=\"padding:0.625rem 0.75rem;\">Meta 2031</th><th style=\"padding:0.625rem 0.75rem;color:#008541;font-weight:700;\">Meta 2036</th></tr></thead><tbody style=\"divide-y:1px solid #e2e8f0;color:#475569;\"><tr style=\"border-bottom:1px solid #e2e8f0;\"><td style=\"padding:0.625rem 0.75rem;\">Tasa de abandono temprano</td><td style=\"padding:0.625rem 0.75rem;\">48,7%</td><td style=\"padding:0.625rem 0.75rem;\">40%</td><td style=\"padding:0.625rem 0.75rem;font-weight:700;color:#008541;\">35%</td></tr><tr style=\"border-bottom:1px solid #e2e8f0;\"><td style=\"padding:0.625rem 0.75rem;\">Desvío duración real vs. teórica</td><td style=\"padding:0.625rem 0.75rem;\">6,3 años</td><td style=\"padding:0.625rem 0.75rem;\">4,5 años</td><td style=\"padding:0.625rem 0.75rem;font-weight:700;color:#008541;\">3,5 años</td></tr><tr style=\"border-bottom:1px solid #e2e8f0;\"><td style=\"padding:0.625rem 0.75rem;\">Matrícula total de grado/pregrado</td><td style=\"padding:0.625rem 0.75rem;\">27.692</td><td style=\"padding:0.625rem 0.75rem;\">31.000</td><td style=\"padding:0.625rem 0.75rem;font-weight:700;color:#008541;\">35.000</td></tr><tr style=\"border-bottom:1px solid #e2e8f0;\"><td style=\"padding:0.625rem 0.75rem;\">Cargos docentes ordinarios (por concurso)</td><td style=\"padding:0.625rem 0.75rem;\">~63%</td><td style=\"padding:0.625rem 0.75rem;\">75%</td><td style=\"padding:0.625rem 0.75rem;font-weight:700;color:#008541;\">85%</td></tr><tr style=\"border-bottom:1px solid #e2e8f0;\"><td style=\"padding:0.625rem 0.75rem;\">Docentes con formación de posgrado</td><td style=\"padding:0.625rem 0.75rem;\">33%</td><td style=\"padding:0.625rem 0.75rem;\">40%</td><td style=\"padding:0.625rem 0.75rem;font-weight:700;color:#008541;\">47%</td></tr><tr style=\"border-bottom:1px solid #e2e8f0;\"><td style=\"padding:0.625rem 0.75rem;\">Publicaciones en revistas indexadas (Scopus)</td><td style=\"padding:0.625rem 0.75rem;\">Base</td><td style=\"padding:0.625rem 0.75rem;\">+25%</td><td style=\"padding:0.625rem 0.75rem;font-weight:700;color:#008541;\">+50%</td></tr><tr style=\"border-bottom:1px solid #e2e8f0;\"><td style=\"padding:0.625rem 0.75rem;\">Carreras con curricularización de extensión</td><td style=\"padding:0.625rem 0.75rem;\">0</td><td style=\"padding:0.625rem 0.75rem;\">5 carreras</td><td style=\"padding:0.625rem 0.75rem;font-weight:700;color:#008541;\">15 carreras</td></tr><tr><td style=\"padding:0.625rem 0.75rem;\">Plan de infraestructura ejecutado</td><td style=\"padding:0.625rem 0.75rem;\">-</td><td style=\"padding:0.625rem 0.75rem;\">50%</td><td style=\"padding:0.625rem 0.75rem;font-weight:700;color:#008541;\">&gt;70%</td></tr></tbody></table></div></div>"
+          }
+        },
+        {
+          "id": "financiamiento-monitoreo-siac",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<div style=\"display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1rem;margin:1.25rem 0;\"><div style=\"background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #b07d2c;border-radius:0.5rem;padding:1.25rem;\"><strong style=\"color:#b07d2c;font-size:0.9375rem;display:block;margin-bottom:0.35rem;\">💰 Fuentes de Financiamiento</strong><p style=\"font-size:0.8125rem;color:#4b5563;line-height:1.6;margin:0;\">El PDI se sustenta en el <strong>Tesoro Nacional (Fuente 11 ~92%)</strong>, complementado con programas competitivos de la SSPU, CONICET, CIC, <strong>Fondos Propios (Fuente 12 - CATEC y posgrados)</strong>, convenios internacionales y la creación proyectada de la <strong>Fundación UNLu</strong>.</p></div><div style=\"background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #008541;border-radius:0.5rem;padding:1.25rem;\"><strong style=\"color:#008541;font-size:0.9375rem;display:block;margin-bottom:0.35rem;\">🛡️ Monitoreo SIAC y Transparencia</strong><p style=\"font-size:0.8125rem;color:#4b5563;line-height:1.6;margin:0;\">El seguimiento se efectúa de manera anual y bienal por la <strong>Comisión Asesora Permanente de Planeamiento</strong> en articulación con el <strong>Sistema Institucional de Aseguramiento de la Calidad (SIAC)</strong>, con informe anual a la Asamblea Universitaria y publicación en el <strong>Portal de Transparencia</strong>.</p></div></div>"
+          }
+        },
+        {
+          "id": "pdi-action-buttons",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<div style=\"display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.5rem;\"><a href=\"/Propuesta-PDI-2026-2036.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"display:inline-flex;align-items:center;gap:0.5rem;background-color:#008541;color:white;font-weight:700;font-size:0.875rem;padding:0.75rem 1.25rem;border-radius:0.5rem;text-decoration:none;box-shadow:0 2px 6px rgba(0,0,0,0.1);\">📄 Descargar Propuesta PDI 2026–2036 (PDF)</a><a href=\"/Res-PDI.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"display:inline-flex;align-items:center;gap:0.5rem;background-color:#ffffff;border:1px solid #cbd5e1;color:#008541;font-weight:700;font-size:0.875rem;padding:0.75rem 1.25rem;border-radius:0.5rem;text-decoration:none;box-shadow:0 1px 3px rgba(0,0,0,0.05);\">📜 Descargar Resolución RESHCS: 492/2026 (PDF)</a></div>"
+          }
+        }
+      ]
+    }
+  ]
+}
