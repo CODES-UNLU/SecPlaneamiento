@@ -1,13 +1,296 @@
----
+﻿---
 /**
- * Página de Inicio (Vaciada para otros integrantes del equipo)
- * Se conserva el Layout para mantener la visibilidad del Navbar y Footer institucionales.
+ * Página de Inicio: Portal de la Secretaría de Planeamiento - UNLu
  */
 import Layout from "../layouts/Layout.astro";
+import StatCard from "../components/StatCard.astro";
 ---
 
-<Layout title="Inicio · Secretaría de Planeamiento UNLu" activeSection="">
-  <!-- Sección vacía (Le corresponde al resto del equipo de desarrollo) -->
-  <div class="min-h-[300px]"></div>
-</Layout>
+<Layout title="Secretaría de Planeamiento · Universidad Nacional de Luján" activeSection="">
 
+  <!-- HERO PRINCIPAL INSTITUCIONAL -->
+  <section class="relative bg-gradient-to-br from-unlu-green-dark via-unlu-green to-[#005c2e] text-white py-16 lg:py-24 overflow-hidden border-b-4 border-unlu-gold">
+    <!-- Escudo de fondo sutil -->
+    <div class="absolute -right-16 -bottom-16 opacity-10 pointer-events-none hidden md:block">
+      <img src="/escudo.svg" alt="" class="w-96 h-96 invert" />
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-bold text-unlu-gold border border-white/20 uppercase tracking-[0.18em] mb-4">
+          <span>Universidad Nacional de Luján · Rectorado</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif leading-tight tracking-tight text-white mb-5">
+          Planificación, Evaluación y Aseguramiento de la Calidad
+        </h1>
+        <p class="text-base sm:text-lg text-white/90 leading-relaxed mb-8">
+          Coordinamos los procesos de autoevaluación, planeamiento estratégico, aseguramiento de la calidad (SIAC) y desarrollo institucional al servicio de toda la comunidad universitaria.
+        </p>
+
+        <!-- Botones de Acción Rápida -->
+        <div class="flex flex-wrap items-center gap-3.5">
+          <a
+            href="/plan-desarrollo"
+            class="inline-flex items-center gap-2 bg-unlu-gold hover:bg-yellow-400 text-slate-900 font-extrabold text-sm px-5 py-3 rounded-xl shadow-lg transition-transform active:scale-95"
+          >
+            <span>📘 Plan de Desarrollo (PDI)</span>
+            <span>→</span>
+          </a>
+          <a
+            href="/siac"
+            class="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 text-white font-bold text-sm px-5 py-3 rounded-xl backdrop-blur-md border border-white/25 transition-all"
+          >
+            <span>🛡️ Conocer el SIAC</span>
+          </a>
+          <a
+            href="/autoevaluacion"
+            class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white/90 font-semibold text-sm px-5 py-3 rounded-xl transition-all"
+          >
+            <span>📋 Autoevaluación</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CIFRAS CLAVE INSTITUCIONALES -->
+  <section class="bg-gray-50 py-12 border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <StatCard
+          value="27.692"
+          label="Estudiantes de Grado y Pregrado"
+          description="Matrícula activa en carreras presenciales y a distancia"
+        />
+        <StatCard
+          value="2.568"
+          label="Cargos Docentes"
+          description="Distribuidos en los 4 Departamentos Académicos"
+        />
+        <StatCard
+          value="49"
+          label="Propuestas Formativas"
+          description="26 carreras de grado/pregrado y 23 de posgrado"
+          highlight={true}
+        />
+        <StatCard
+          value="6 Sedes"
+          label="Presencia Territorial"
+          description="Sede Central Luján, CR Campana, Chivilcoy, San Miguel, San Fernando y CABA"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIONES PRINCIPALES / PILARES -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-[0.18em] text-unlu-gold-dark block mb-2">EJES DE GESTIÓN</span>
+        <h2 class="text-2xl sm:text-3xl font-bold font-serif text-gray-900 mb-3">
+          Pilares de la Secretaría de Planeamiento
+        </h2>
+        <div class="h-1 bg-gradient-to-r from-unlu-green via-unlu-gold to-unlu-red w-24 mx-auto mb-4"></div>
+        <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+          Accedé a la información, normativas, diagnósticos e instrumentos que guían la mejora continua de la Universidad Nacional de Luján.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Tarjeta 1: La Secretaría -->
+        <div class="bg-white rounded-2xl border border-gray-200 shadow-xs hover:shadow-xl hover:border-unlu-green transition-all duration-300 p-6 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-unlu-green/10 text-unlu-green flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+              🏛️
+            </div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-unlu-gold-dark block mb-1">INSTITUCIONAL</span>
+            <h3 class="text-lg font-bold text-gray-900 mb-2 font-serif group-hover:text-unlu-green transition-colors">
+              La Secretaría
+            </h3>
+            <p class="text-xs text-gray-600 leading-relaxed mb-4">
+              Misión, visión, valores y equipo a cargo de coordinar los procesos estratégicos de planificación y evaluación de la UNLu.
+            </p>
+          </div>
+          <a
+            href="/la-secretaria"
+            class="inline-flex items-center gap-1.5 text-xs font-bold text-unlu-green hover:underline pt-3 border-t border-gray-100"
+          >
+            <span>Conocer la estructura</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <!-- Tarjeta 2: Autoevaluación -->
+        <div class="bg-white rounded-2xl border border-gray-200 shadow-xs hover:shadow-xl hover:border-unlu-green transition-all duration-300 p-6 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+              📋
+            </div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-700 block mb-1">PROCESO PARTICIPATIVO</span>
+            <h3 class="text-lg font-bold text-gray-900 mb-2 font-serif group-hover:text-unlu-green transition-colors">
+              Autoevaluación Institucional
+            </h3>
+            <p class="text-xs text-gray-600 leading-relaxed mb-4">
+              Informe final, análisis de las 6 dimensiones establecidas por el HCS, encuestas a todos los claustros y cobertura en medios.
+            </p>
+          </div>
+          <a
+            href="/autoevaluacion"
+            class="inline-flex items-center gap-1.5 text-xs font-bold text-unlu-green hover:underline pt-3 border-t border-gray-100"
+          >
+            <span>Ver informe y encuestas</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <!-- Tarjeta 3: PDI -->
+        <div class="bg-white rounded-2xl border border-gray-200 shadow-xs hover:shadow-xl hover:border-unlu-green transition-all duration-300 p-6 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+              📘
+            </div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-blue-700 block mb-1">DÉCADA 2026–2036</span>
+            <h3 class="text-lg font-bold text-gray-900 mb-2 font-serif group-hover:text-unlu-green transition-colors">
+              Plan de Desarrollo (PDI)
+            </h3>
+            <p class="text-xs text-gray-600 leading-relaxed mb-4">
+              Aprobado por Res. HCS 492/2026. Hoja de ruta estratégica con 137 proyectos, metas cuantitativas y 6 dimensiones de análisis.
+            </p>
+          </div>
+          <a
+            href="/plan-desarrollo"
+            class="inline-flex items-center gap-1.5 text-xs font-bold text-unlu-green hover:underline pt-3 border-t border-gray-100"
+          >
+            <span>Consultar PDI y Resolución</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <!-- Tarjeta 4: SIAC -->
+        <div class="bg-white rounded-2xl border border-gray-200 shadow-xs hover:shadow-xl hover:border-unlu-green transition-all duration-300 p-6 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+              🛡️
+            </div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700 block mb-1">CALIDAD INSTITUCIONAL</span>
+            <h3 class="text-lg font-bold text-gray-900 mb-2 font-serif group-hover:text-unlu-green transition-colors">
+              Sistema SIAC-UNLu
+            </h3>
+            <p class="text-xs text-gray-600 leading-relaxed mb-4">
+              Estructura permanente aprobada por Res. HCS 890/2025 para consolidar la cultura de evaluación continua en toda la universidad.
+            </p>
+          </div>
+          <a
+            href="/siac"
+            class="inline-flex items-center gap-1.5 text-xs font-bold text-unlu-green hover:underline pt-3 border-t border-gray-100"
+          >
+            <span>Explorar estructura y normas</span>
+            <span>→</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCUMENTOS DESTACADOS -->
+  <section class="bg-gradient-to-br from-gray-50 to-gray-100 py-14 border-t border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-unlu-gold-dark block mb-1">DOCUMENTACIÓN OFICIAL</span>
+          <h2 class="text-xl sm:text-2xl font-bold font-serif text-gray-900">
+            Documentos y Resoluciones Principales
+          </h2>
+        </div>
+        <a href="/plan-desarrollo" class="text-xs font-bold text-unlu-green hover:underline flex items-center gap-1">
+          <span>Ver todos los documentos</span>
+          <span>→</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <a
+          href="/Propuesta-PDI-2026-2036.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-white p-5 rounded-xl border border-gray-200 hover:border-unlu-green shadow-xs hover:shadow-md transition-all flex items-start gap-4 group"
+        >
+          <div class="w-10 h-10 rounded-lg bg-red-50 text-red-600 flex items-center justify-center shrink-0 text-lg">
+            📄
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-gray-400 block mb-0.5">PLAN 2026–2036</span>
+            <strong class="text-xs font-bold text-gray-900 group-hover:text-unlu-green block leading-snug">
+              Propuesta PDI 2026–2036
+            </strong>
+            <span class="text-[11px] text-gray-500 block mt-1">Documento completo de planificación decenal</span>
+          </div>
+        </a>
+
+        <a
+          href="/Res-PDI.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-white p-5 rounded-xl border border-gray-200 hover:border-unlu-green shadow-xs hover:shadow-md transition-all flex items-start gap-4 group"
+        >
+          <div class="w-10 h-10 rounded-lg bg-red-50 text-red-600 flex items-center justify-center shrink-0 text-lg">
+            📜
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-gray-400 block mb-0.5">RESOLUCIÓN HCS</span>
+            <strong class="text-xs font-bold text-gray-900 group-hover:text-unlu-green block leading-snug">
+              Resolución RESHCS: 492/2026
+            </strong>
+            <span class="text-[11px] text-gray-500 block mt-1">Aprobación del PDI y Anexo Único</span>
+          </div>
+        </a>
+
+        <a
+          href="/RESO-SIAC.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-white p-5 rounded-xl border border-gray-200 hover:border-unlu-green shadow-xs hover:shadow-md transition-all flex items-start gap-4 group"
+        >
+          <div class="w-10 h-10 rounded-lg bg-red-50 text-red-600 flex items-center justify-center shrink-0 text-lg">
+            🛡️
+          </div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-gray-400 block mb-0.5">RESOLUCIÓN HCS</span>
+            <strong class="text-xs font-bold text-gray-900 group-hover:text-unlu-green block leading-snug">
+              Resolución RESHCS: 890/2025
+            </strong>
+            <span class="text-[11px] text-gray-500 block mt-1">Creación y Gobernanza del SIAC-UNLu</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNER DE CONTACTO / ATENCIÓN -->
+  <section class="bg-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-r from-unlu-green-dark to-[#005c2e] text-white rounded-2xl p-6 sm:p-8 shadow-lg flex flex-col md:flex-row items-center justify-between gap-6 border-l-4 border-unlu-gold">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-unlu-gold block mb-1">ATENCIÓN AL PÚBLICO</span>
+          <h3 class="text-xl font-bold font-serif text-white mb-2">
+            ¿Tenés dudas o necesitás realizar una consulta?
+          </h3>
+          <p class="text-xs sm:text-sm text-white/85 max-w-xl">
+            Atención presencial en Edificio 8 — Rectorado (Sede Central Luján) de lunes a viernes de 8:00 a 16:00 hs. O envianos tu mensaje a través de nuestro formulario digital.
+          </p>
+        </div>
+        <div class="flex items-center gap-3 shrink-0">
+          <a
+            href="/contacto"
+            class="bg-unlu-gold hover:bg-yellow-400 text-slate-900 font-extrabold text-xs px-5 py-3 rounded-xl shadow-md transition-transform active:scale-95"
+          >
+            Formulario de Contacto
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
