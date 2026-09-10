@@ -9,12 +9,14 @@ import autoevaluacionData from "../../data/pages/autoevaluacion.json";
 import planDesarrolloData from "../../data/pages/plan-desarrollo.json";
 import laSecretariaData from "../../data/pages/la-secretaria.json";
 import contactoData from "../../data/pages/contacto.json";
+import siacData from "../../data/pages/siac.json";
 
 const SERVER_BASE_PAGES = {
   autoevaluacion: autoevaluacionData,
   "plan-desarrollo": planDesarrolloData,
   "la-secretaria": laSecretariaData,
   contacto: contactoData,
+  siac: siacData,
 };
 ---
 
@@ -42,6 +44,7 @@ const SERVER_BASE_PAGES = {
       <select id="page-selector" class="bg-slate-100 border border-slate-300 text-slate-800 text-xs sm:text-sm rounded-xl px-3 py-2 font-medium focus:ring-2 focus:ring-unlu-green focus:bg-white focus:outline-none transition-all">
         <option value="autoevaluacion" selected>Autoevaluación Institucional</option>
         <option value="plan-desarrollo">Plan de Desarrollo Institucional</option>
+        <option value="siac">SIAC (Aseguramiento de la Calidad)</option>
         <option value="la-secretaria">La Secretaría</option>
         <option value="contacto">Contacto</option>
       </select>

@@ -215,6 +215,7 @@
     const DEFAULT_PAGES = [
       { key: 'autoevaluacion', title: 'Autoevaluación Institucional', desc: 'Sección principal con encuestas e informe HCS', url: '/autoevaluacion', status: 'Publicado', author: 'usuplanea', date: 'Hoy 16:24' },
       { key: 'plan-desarrollo', title: 'Plan de Desarrollo Institucional (PDI)', desc: 'Lineamientos estratégicos decenio 2025-2035', url: '/plan-desarrollo', status: 'Publicado', author: 'usuplanea', date: '22/05/2026' },
+      { key: 'siac', title: 'SIAC (Aseguramiento de la Calidad)', desc: 'Estructura permanente de calidad RESHCS: 890/2025', url: '/siac', status: 'Publicado', author: 'usuplanea', date: 'Hoy 12:20' },
       { key: 'la-secretaria', title: 'La Secretaría', desc: 'Misión, visión, valores y equipo directivo', url: '/la-secretaria', status: 'Publicado', author: 'usuplanea', date: '12/04/2026' },
       { key: 'contacto', title: 'Contacto e Internos', desc: 'Ubicación, horario de atención e internos telefónicos', url: '/contacto', status: 'Publicado', author: 'usuplanea', date: '18/02/2026' }
     ];
@@ -242,9 +243,22 @@
         name: 'Plan de Desarrollo Institucional',
         href: '/plan-desarrollo',
         subItems: [
-          { name: 'PDI UNLu 2025-2035', href: '/plan-desarrollo#pdi' },
-          { name: 'Dimensiones de análisis', href: '/plan-desarrollo#dimensiones' },
-          { name: 'Presentación Proyecto/Acción', href: '/plan-desarrollo#proyectos' }
+          { name: '¿Qué es el PDI?', href: '/plan-desarrollo#pdi' },
+          { name: 'Metodología y Diagnóstico', href: '/plan-desarrollo#metodologia-diagnostico' },
+          { name: '6 Dimensiones Estratégicas', href: '/plan-desarrollo#dimensiones' },
+          { name: 'Beneficios por Claustro', href: '/plan-desarrollo#beneficios-claustros' },
+          { name: 'Metas al 2036 y SIAC', href: '/plan-desarrollo#metas-monitoreo' }
+        ]
+      },
+      {
+        name: 'SIAC',
+        href: '/siac',
+        subItems: [
+          { name: '¿Qué es el SIAC?', href: '/siac#que-es' },
+          { name: 'Beneficios y Objetivos', href: '/siac#beneficios' },
+          { name: '¿A quién está orientado?', href: '/siac#destinatarios' },
+          { name: 'Estructura y Gestión', href: '/siac#gestion' },
+          { name: 'Marco Normativo', href: '/siac#marco-normativo' }
         ]
       },
       {

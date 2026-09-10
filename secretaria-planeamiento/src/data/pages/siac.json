@@ -1,0 +1,164 @@
+{
+  "pageId": "siac",
+  "meta": {
+    "title": "SIAC · Sistema Institucional de Aseguramiento de la Calidad · UNLu",
+    "activeSection": "siac",
+    "heroTitle": "Sistema Institucional de Aseguramiento de la Calidad (SIAC-UNLu)",
+    "heroBadge": "ASEGURAMIENTO DE LA CALIDAD",
+    "heroSubtitle": "Estructura institucional permanente para la mejora continua, la autoevaluación participativa y la gestión estratégica de la calidad en la Universidad Nacional de Luján."
+  },
+  "blocks": [
+    {
+      "id": "siac-banner-reso",
+      "type": "cta-banner",
+      "props": {
+        "etiqueta": "RESOLUCIÓN H. CONSEJO SUPERIOR RESHCS: 890/2025",
+        "titulo": "Haga click aquí para acceder a la Resolución de Creación del SIAC-UNLu (PDF)",
+        "url": "/RESO-SIAC.pdf",
+        "textoBoton": "Ver Resolución"
+      }
+    },
+    {
+      "id": "que-es",
+      "type": "seccion-badge",
+      "props": {
+        "badge": "¿QUÉ ES EL SIAC?",
+        "titulo": "¿Qué es el Sistema Institucional de Aseguramiento de la Calidad?"
+      },
+      "children": [
+        {
+          "id": "que-es-p1",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<p>El <strong>Sistema Institucional de Aseguramiento de la Calidad de la Universidad Nacional de Luján (SIAC-UNLu)</strong> es una estructura institucional permanente aprobada por el <strong>Honorable Consejo Superior</strong> mediante la <strong>Resolución RESHCS: 890/2025</strong> (Expediente 1101/2025).</p><p>Está concebido como un camino integral hacia la <strong>mejora continua</strong> en todas las funciones sustantivas de la institución: <strong>docencia, investigación, extensión y gestión institucional</strong>, consolidando una cultura reflexiva y sistemática de autoevaluación, planificación estratégica y aseguramiento de la calidad académica e institucional.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "beneficios",
+      "type": "seccion-badge",
+      "props": {
+        "badge": "OBJETIVOS Y BENEFICIOS",
+        "titulo": "¿Qué beneficios trae el SIAC?"
+      },
+      "children": [
+        {
+          "id": "beneficios-intro",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<p>Conforme al <strong>Artículo 2° de la Resolución RESHCS: 890/2025</strong>, el SIAC-UNLu establece los siguientes objetivos y beneficios estratégicos para la Universidad:</p>"
+          }
+        },
+        {
+          "id": "beneficios-items",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<ul style=\"list-style:none;padding:0;margin:1rem 0;display:flex;flex-direction:column;gap:0.875rem;\"><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.75rem;height:1.75rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.875rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.125rem;\">✓</span><div><strong>Cultura de calidad y mejora continua:</strong> Promover, fortalecer y consolidar la cultura de la evaluación de la calidad en la UNLu como un camino para la mejora continua, propiciando el involucramiento y la participación de toda la comunidad universitaria.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.75rem;height:1.75rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.875rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.125rem;\">✓</span><div><strong>Fortalecimiento de la planificación:</strong> Fortalecer los procesos de planificación desarrollando estrategias, instrumentos y procesos de autoevaluación y evaluación institucional.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.75rem;height:1.75rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.875rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.125rem;\">✓</span><div><strong>Participación de todos los claustros:</strong> Promover la participación de todos los claustros (estudiantes, docentes, nodocentes y graduados) en instancias de autoevaluación.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.75rem;height:1.75rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.875rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.125rem;\">✓</span><div><strong>Integración con la evaluación externa:</strong> Integrar los procesos de calidad institucional a los requerimientos de evaluación externa y certificación de carreras.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.75rem;height:1.75rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.875rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.125rem;\">✓</span><div><strong>Sistemas de información y toma de decisiones:</strong> Impulsar la implementación de sistemas de información confiables y transparentes, que aseguren la disponibilidad y seguimiento de datos e indicadores para la evaluación de la calidad y la toma de decisiones.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.75rem;height:1.75rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.875rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.125rem;\">✓</span><div><strong>Seguimiento de planes de mejora:</strong> Dar seguimiento a la ejecución de los planes de desarrollo y mejora institucional.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.75rem;height:1.75rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.875rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.125rem;\">✓</span><div><strong>Procedimientos sistemáticos y difusión:</strong> Establecer procedimientos sistemáticos para asegurar la publicación y difusión de las acciones vinculadas al aseguramiento de la calidad en la institución.</div></li></ul>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "destinatarios",
+      "type": "seccion-badge",
+      "props": {
+        "badge": "DESTINATARIOS",
+        "titulo": "¿A quién está orientado el SIAC?"
+      },
+      "children": [
+        {
+          "id": "destinatarios-p1",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<p>El SIAC está orientado a <strong>toda la comunidad universitaria de la Universidad Nacional de Luján</strong>, fomentando el compromiso colectivo y la participación activa en todas las sedes y centros regionales:</p>"
+          }
+        },
+        {
+          "id": "destinatarios-claustros",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<div style=\"display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:1rem;margin:1.25rem 0;\"><div style=\"background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #008541;border-radius:0.5rem;padding:1rem 1.25rem;\"><strong style=\"color:#008541;font-size:0.9375rem;display:block;margin-bottom:0.25rem;\">Estudiantes</strong><span style=\"font-size:0.8125rem;color:#4b5563;\">Participando activamente en los procesos de autoevaluación, encuestas de calidad, seguimiento curricular y propuestas de mejora.</span></div><div style=\"background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #008541;border-radius:0.5rem;padding:1rem 1.25rem;\"><strong style=\"color:#008541;font-size:0.9375rem;display:block;margin-bottom:0.25rem;\">Cuerpo Docente</strong><span style=\"font-size:0.8125rem;color:#4b5563;\">Involucrándose en la excelencia pedagógica, la actualización de planes de estudio y los proyectos de docencia, investigación y extensión.</span></div><div style=\"background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #008541;border-radius:0.5rem;padding:1rem 1.25rem;\"><strong style=\"color:#008541;font-size:0.9375rem;display:block;margin-bottom:0.25rem;\">Nodocentes</strong><span style=\"font-size:0.8125rem;color:#4b5563;\">Fortaleciendo la gestión institucional, los procesos administrativos, soporte técnico, infraestructura y recursos universitarios.</span></div><div style=\"background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #008541;border-radius:0.5rem;padding:1rem 1.25rem;\"><strong style=\"color:#008541;font-size:0.9375rem;display:block;margin-bottom:0.25rem;\">Graduados y Comunidad</strong><span style=\"font-size:0.8125rem;color:#4b5563;\">Aportando la visión del ejercicio profesional y vinculando la calidad universitaria con las necesidades del entorno socioproductivo.</span></div></div>"
+          }
+        },
+        {
+          "id": "destinatarios-p2",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<p>Asimismo, abarca a las <strong>Unidades Académicas (Departamentos Académicos)</strong> y a las <strong>estructuras de Rectorado</strong> vinculadas a estas acciones, asegurando una mirada participativa e integradora en todas las áreas de la UNLu.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "gestion",
+      "type": "seccion-badge",
+      "props": {
+        "badge": "ORGANIZACIÓN Y GOBERNANZA",
+        "titulo": "¿Cómo está conformado y quién gestiona el SIAC?"
+      },
+      "children": [
+        {
+          "id": "gestion-p1",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<p>Conforme a los <strong>Artículos 3° y 4° de la Resolución RESHCS: 890/2025</strong>, la gestión del SIAC-UNLu está a cargo de la <strong>Unidad de Calidad Institucional</strong>, con un modelo de gobernanza representativo:</p>"
+          }
+        },
+        {
+          "id": "gestion-unidad",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<div style=\"background:#f8fafc;border:1px solid #cbd5e1;border-radius:0.75rem;padding:1.5rem;margin:1.25rem 0;\"><h3 style=\"font-size:1.125rem;font-weight:700;color:#008541;margin:0 0 0.75rem;font-family:Georgia,serif;\">🏛️ Integración de la Unidad de Calidad Institucional</h3><p style=\"margin-bottom:0.75rem;color:#374151;\">La Unidad de Calidad Institucional se integra con representaciones titulares y suplentes:</p><ul style=\"list-style:disc;padding-left:1.5rem;color:#374151;line-height:1.8;margin:0;\"><li><strong>Un (1) representante</strong> de cada Departamento Académico (y su respectivo suplente).</li><li><strong>Un (1) representante</strong> del Rectorado.</li><li><strong>Un (1) representante</strong> de la Dirección de Evaluación y Calidad Institucional.</li><li><strong>Un (1) representante</strong> de cada uno de los Claustros que integran el Honorable Consejo Superior (Docentes, Estudiantes, Nodocentes y Graduados, con su respectivo suplente).</li></ul></div>"
+          }
+        },
+        {
+          "id": "gestion-roles",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<div style=\"display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1rem;margin:1rem 0;\"><div style=\"background:#ffffff;border:1px solid #e2e8f0;border-top:3px solid #f9c540;border-radius:0.5rem;padding:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);\"><span style=\"font-size:0.6875rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:#b07d2c;display:block;margin-bottom:0.25rem;\">COORDINACIÓN GENERAL</span><strong style=\"color:#111827;font-size:1rem;display:block;margin-bottom:0.35rem;\">Representación del Rectorado</strong><p style=\"font-size:0.8125rem;color:#4b5563;margin:0;\">La Unidad de Calidad Institucional será coordinada por la representación del Rectorado de la UNLu.</p></div><div style=\"background:#ffffff;border:1px solid #e2e8f0;border-top:3px solid #008541;border-radius:0.5rem;padding:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);\"><span style=\"font-size:0.6875rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:#008541;display:block;margin-bottom:0.25rem;\">SECRETARÍA EJECUTIVA</span><strong style=\"color:#111827;font-size:1rem;display:block;margin-bottom:0.35rem;\">Dirección de Evaluación y Calidad Institucional</strong><p style=\"font-size:0.8125rem;color:#4b5563;margin:0;\">La secretaría ejecutiva será ejercida por la Dirección de Evaluación y Calidad Institucional.</p></div></div>"
+          }
+        }
+      ]
+    },
+    {
+      "id": "marco-normativo",
+      "type": "seccion-badge",
+      "props": {
+        "badge": "MARCO NORMATIVO Y ANTECEDENTES",
+        "titulo": "¿Cuál es el marco normativo o por qué surge el SIAC?"
+      },
+      "children": [
+        {
+          "id": "normativo-p1",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<p>El surgimiento y formalización del SIAC-UNLu se sustenta en normativas nacionales y decisiones institucionales del gobierno universitario:</p>"
+          }
+        },
+        {
+          "id": "normativo-cards",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<div style=\"display:flex;flex-direction:column;gap:1rem;margin:1.25rem 0;\"><div style=\"background:#f8fafc;border-left:4px solid #b07d2c;padding:1.25rem;border-radius:0 0.5rem 0.5rem 0;border:1px solid #e2e8f0;border-left-width:4px;\"><span style=\"font-size:0.6875rem;font-weight:700;color:#b07d2c;text-transform:uppercase;letter-spacing:0.1em;\">MARCO NACIONAL · MINISTERIO DE EDUCACIÓN</span><h4 style=\"font-size:1rem;font-weight:700;color:#111827;margin:0.25rem 0;\">Resolución Ministerial N° 2597/2023</h4><p style=\"font-size:0.8125rem;color:#4b5563;margin:0 0 0.5rem;\">Materializa el <strong>Acuerdo Plenario N° 272 del Consejo de Universidades</strong>, instando a las Universidades a garantizar el funcionamiento de sistemas institucionales de aseguramiento de la calidad (SIAC) para promover y fortalecer la cultura de evaluación, administrar procesos e instrumentos de autoevaluación y evaluación institucional, realizar la certificación de carreras y promover planes de mejora institucional.</p></div><div style=\"background:#f8fafc;border-left:4px solid #008541;padding:1.25rem;border-radius:0 0.5rem 0.5rem 0;border:1px solid #e2e8f0;border-left-width:4px;\"><span style=\"font-size:0.6875rem;font-weight:700;color:#008541;text-transform:uppercase;letter-spacing:0.1em;\">ESTRUCTURA PERMANENTE · UNLu</span><h4 style=\"font-size:1rem;font-weight:700;color:#111827;margin:0.25rem 0;\">Resolución Rector RR: 577/2024</h4><p style=\"font-size:0.8125rem;color:#4b5563;margin:0;\">Adopción de las medidas organizacionales para conformar una estructura permanente a cargo de los procesos de evaluación y calidad institucional.</p></div><div style=\"background:#f8fafc;border-left:4px solid #c0392b;padding:1.25rem;border-radius:0 0.5rem 0.5rem 0;border:1px solid #e2e8f0;border-left-width:4px;\"><span style=\"font-size:0.6875rem;font-weight:700;color:#c0392b;text-transform:uppercase;letter-spacing:0.1em;\">APROBACIÓN FINAL · HONORABLE CONSEJO SUPERIOR</span><h4 style=\"font-size:1rem;font-weight:700;color:#111827;margin:0.25rem 0;\">Resolución RESHCS: 890/2025</h4><p style=\"font-size:0.8125rem;color:#4b5563;margin:0;\">Aprobada en sesión ordinaria del <strong>27 de noviembre de 2025</strong> conforme al <strong>Artículo 53 del Estatuto Universitario</strong>, aprobando formalmente la creación y funcionamiento del Sistema Institucional de Aseguramiento de la Calidad de la Universidad Nacional de Luján (SIAC-UNLu).</p></div></div>"
+          }
+        },
+        {
+          "id": "normativo-p2",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<p><strong>¿Por qué surge?</strong> Surge a partir del compromiso sostenido y ratificado por la UNLu con la mejora continua en sus funciones sustantivas (docencia, investigación, extensión y gestión) y de la necesidad de establecer ámbitos institucionales representativos para la definición de políticas, criterios y acuerdos en los diferentes procesos evaluativos y certificaciones de calidad, en consonancia con el Plan de Desarrollo Institucional.</p>"
+          }
+        },
+        {
+          "id": "normativo-link",
+          "type": "link-card",
+          "props": {
+            "text": "Consultar y descargar la Resolución RESHCS: 890/2025 completa en formato PDF",
+            "url": "/RESO-SIAC.pdf"
+          }
+        }
+      ]
+    }
+  ]
+}

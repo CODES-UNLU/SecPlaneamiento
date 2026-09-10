@@ -41,9 +41,24 @@ const navLinks = [
     id: "plan-desarrollo",
     hasDropdown: true,
     subItems: [
-      { name: "PDI UNLu 2025-2035", href: "/plan-desarrollo#pdi" },
-      { name: "Dimensiones de análisis", href: "/plan-desarrollo#dimensiones" },
-      { name: "Presentación Proyecto/Acción", href: "/plan-desarrollo#proyectos" },
+      { name: "¿Qué es el PDI?", href: "/plan-desarrollo#pdi" },
+      { name: "Metodología y Diagnóstico", href: "/plan-desarrollo#metodologia-diagnostico" },
+      { name: "6 Dimensiones Estratégicas", href: "/plan-desarrollo#dimensiones" },
+      { name: "Beneficios por Claustro", href: "/plan-desarrollo#beneficios-claustros" },
+      { name: "Metas al 2036 y SIAC", href: "/plan-desarrollo#metas-monitoreo" },
+    ],
+  },
+  {
+    name: "SIAC",
+    href: "/siac",
+    id: "siac",
+    hasDropdown: true,
+    subItems: [
+      { name: "¿Qué es el SIAC?", href: "/siac#que-es" },
+      { name: "Beneficios y Objetivos", href: "/siac#beneficios" },
+      { name: "¿A quién está orientado?", href: "/siac#destinatarios" },
+      { name: "Estructura y Gestión", href: "/siac#gestion" },
+      { name: "Marco Normativo", href: "/siac#marco-normativo" },
     ],
   },
   {
@@ -96,19 +111,42 @@ const navLinks = [
           </div>
         </a>
 
-        <!-- Buscador (solo desktop) -->
-        <div class="hidden md:flex items-center">
-          <div class="flex items-center rounded-lg overflow-hidden shadow-sm">
-            <input
-              type="text"
-              placeholder="Buscar"
-              class="px-4 py-2 text-sm text-gray-700 placeholder:text-gray-400 bg-gray-200 focus:bg-gray-50 focus:outline-none transition-colors duration-200 w-40 lg:w-52"
-            />
-            <button class="bg-unlu-green hover:bg-unlu-green-dark text-white px-3 py-[9px] transition-colors duration-200 shrink-0" aria-label="Buscar">
+        <!-- Buscador con resultados instantáneos (desktop) -->
+        <div class="hidden md:flex items-center relative" id="nav-search-container">
+          <form id="nav-search-form" class="flex items-center rounded-lg overflow-hidden shadow-xs border border-gray-300 focus-within:border-unlu-green focus-within:ring-2 focus-within:ring-unlu-green/20 transition-all bg-gray-100" role="search">
+            <div class="relative flex items-center">
+              <input
+                type="search"
+                id="nav-search-input"
+                placeholder="Buscar en el portal..."
+                autocomplete="off"
+                class="px-3.5 py-2 text-sm text-gray-800 placeholder:text-gray-400 bg-transparent focus:outline-none w-44 lg:w-64 transition-all"
+              />
+              <button
+                type="button"
+                id="nav-search-clear"
+                class="hidden text-gray-400 hover:text-gray-600 px-1.5 py-1 text-xs"
+                title="Limpiar búsqueda"
+              >✕</button>
+            </div>
+            <button
+              type="submit"
+              id="nav-search-submit"
+              class="bg-unlu-green hover:bg-unlu-green-dark text-white px-3 py-[9px] transition-colors duration-200 shrink-0 cursor-pointer"
+              aria-label="Buscar"
+            >
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </button>
+          </form>
+
+          <!-- Dropdown flotante de resultados en vivo (desktop) -->
+          <div
+            id="nav-search-results"
+            class="hidden absolute right-0 top-full mt-2 w-96 max-h-96 overflow-y-auto bg-white rounded-xl shadow-2xl border border-gray-200 divide-y divide-gray-100 z-50 transition-all"
+          >
+            <!-- Renderizado dinámico vía JS -->
           </div>
         </div>
 
@@ -198,7 +236,30 @@ const navLinks = [
     ></div>
 
     <!-- Panel lateral derecho: ocupa hasta abajo del todo, deja espacio a la izquierda con línea divisoria -->
-    <div class="absolute top-0 right-0 bottom-0 w-[80%] max-w-sm bg-white border-l border-gray-200 shadow-2xl overflow-y-auto">
+    <div class="absolute top-0 right-0 bottom-0 w-[85%] max-w-sm bg-white border-l border-gray-200 shadow-2xl overflow-y-auto">
+      
+      <!-- Buscador Mobile -->
+      <div class="p-4 border-b border-gray-100 bg-gray-50/70" id="mobile-search-container">
+        <div class="relative flex items-center rounded-xl overflow-hidden border border-gray-300 bg-white shadow-xs focus-within:border-unlu-green focus-within:ring-2 focus-within:ring-unlu-green/20">
+          <input
+            type="search"
+            id="mobile-search-input"
+            placeholder="Buscar SIAC, PDI, carreras..."
+            autocomplete="off"
+            class="w-full px-3.5 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 bg-transparent focus:outline-none"
+          />
+          <button type="button" id="mobile-search-submit" class="px-3 py-2.5 text-unlu-green hover:bg-unlu-green/5" aria-label="Buscar">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </button>
+        </div>
+        <div
+          id="mobile-search-results"
+          class="hidden mt-2 bg-white rounded-xl border border-gray-200 divide-y divide-gray-100 max-h-64 overflow-y-auto shadow-lg"
+        ></div>
+      </div>
+
       <div class="px-4 pt-3 pb-6 space-y-1">
         {navLinks.map((link) => (
           <div>
@@ -233,6 +294,9 @@ const navLinks = [
 </header>
 
 <script>
+  // ==========================================
+  // MENÚ MÓVIL (DRAWER)
+  // ==========================================
   const menuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
   const iconOpen = document.getElementById('menu-icon-open');
@@ -329,5 +393,421 @@ const navLinks = [
     handleInitialHashScroll();
   } else {
     window.addEventListener('load', handleInitialHashScroll);
+  }
+
+  // ==========================================
+  // MOTOR DE BÚSQUEDA EN VIVO (DESKTOP & MOBILE)
+  // ==========================================
+  interface SearchItem {
+    title: string;
+    category: string;
+    badgeColor: string;
+    url: string;
+    keywords: string[];
+    snippet: string;
+    isExternal?: boolean;
+  }
+
+  const SEARCH_INDEX: SearchItem[] = [
+    // --- SIAC ---
+    {
+      title: "¿Qué es el SIAC?",
+      category: "SIAC",
+      badgeColor: "bg-emerald-100 text-emerald-800 border-emerald-300",
+      url: "/siac#que-es",
+      keywords: ["siac", "que es", "sistema institucional aseguramiento calidad", "resolucion 890", "mejora continua", "calidad", "expediente 1101/2025"],
+      snippet: "Estructura institucional permanente aprobada por Resolución RESHCS: 890/2025 para la mejora continua en docencia, investigación, extensión y gestión."
+    },
+    {
+      title: "Beneficios y Objetivos del SIAC",
+      category: "SIAC",
+      badgeColor: "bg-emerald-100 text-emerald-800 border-emerald-300",
+      url: "/siac#beneficios",
+      keywords: ["beneficios", "objetivos", "siac", "coneau", "cultura de evaluacion", "planificacion", "indicadores", "transparencia", "claustros"],
+      snippet: "Fortalecimiento de la planificación, participación democrática de claustros, articulación con estándares CONEAU y decisiones basadas en datos."
+    },
+    {
+      title: "¿A quién está orientado el SIAC?",
+      category: "SIAC",
+      badgeColor: "bg-emerald-100 text-emerald-800 border-emerald-300",
+      url: "/siac#destinatarios",
+      keywords: ["destinatarios", "estudiantes", "docentes", "nodocentes", "graduados", "sedes", "centros regionales", "campana", "chivilcoy", "san miguel"],
+      snippet: "Orientado a toda la comunidad universitaria: estudiantes, docentes, personal nodocente, graduados y unidades académicas de la UNLu."
+    },
+    {
+      title: "Unidad de Calidad Institucional y Gestión del SIAC",
+      category: "SIAC",
+      badgeColor: "bg-emerald-100 text-emerald-800 border-emerald-300",
+      url: "/siac#gestion",
+      keywords: ["gestion", "conformacion", "unidad de calidad institucional", "rectorado", "direccion de evaluacion", "secretaria ejecutiva", "departamentos"],
+      snippet: "Conformada por representantes de departamentos académicos, rectorado, dirección de evaluación y claustros del HCS."
+    },
+    {
+      title: "Marco Normativo del SIAC",
+      category: "SIAC",
+      badgeColor: "bg-emerald-100 text-emerald-800 border-emerald-300",
+      url: "/siac#marco-normativo",
+      keywords: ["marco normativo", "resolucion 2597/2023", "acuerdo plenario 272", "resolucion rector 577/2024", "estatuto universitario", "articulo 53"],
+      snippet: "Surge por Resolución Ministerial N° 2597/2023, Acuerdo Plenario N° 272 y Resoluciones UNLu RR: 577/2024 y RESHCS: 890/2025."
+    },
+    {
+      title: "Resolución de Creación del SIAC (PDF)",
+      category: "Documento PDF",
+      badgeColor: "bg-red-100 text-red-800 border-red-300",
+      url: "/RESO-SIAC.pdf",
+      isExternal: true,
+      keywords: ["resolucion siac pdf", "descargar siac", "reso siac", "hcs 890/2025", "documento oficial"],
+      snippet: "Descarga directa de la Resolución H. Consejo Superior RESHCS: 890/2025."
+    },
+
+    // --- PLAN DE DESARROLLO INSTITUCIONAL ---
+    {
+      title: "¿Qué es el Plan de Desarrollo Institucional (PDI 2026-2036)?",
+      category: "PDI",
+      badgeColor: "bg-blue-100 text-blue-800 border-blue-300",
+      url: "/plan-desarrollo#pdi",
+      keywords: ["pdi", "plan de desarrollo", "2026-2036", "mision", "vision", "propuesta", "estrategia", "matricula", "titulaciones", "carreras"],
+      snippet: "Documento rector decenal aprobado por RESHCS: 492/2026 que orienta el crecimiento, políticas y presupuesto de la UNLu hacia el 2036."
+    },
+    {
+      title: "Resolución de Aprobación del PDI (RESHCS: 492/2026)",
+      category: "PDI",
+      badgeColor: "bg-blue-100 text-blue-800 border-blue-300",
+      url: "/plan-desarrollo#resolucion",
+      keywords: ["resolucion pdi", "reshcs 492/2026", "exp 633/2024", "anexo unico", "consejo superior", "aprobacion"],
+      snippet: "Aprobación formal del PDI 2026–2036 por el Honorable Consejo Superior en su sesión del 16 de julio de 2026."
+    },
+    {
+      title: "Metodología en 7 Etapas y Diagnóstico del PDI",
+      category: "PDI",
+      badgeColor: "bg-blue-100 text-blue-800 border-blue-300",
+      url: "/plan-desarrollo#metodologia-diagnostico",
+      keywords: ["metodologia", "7 etapas", "diagnostico", "foda", "fortalezas", "debilidades", "abandono temprano", "desvio de duracion", "interinatos"],
+      snippet: "Proceso metodológico participativo, fortalezas y desafíos a resolver: abandono inicial del 48,7%, concursos docentes e infraestructura."
+    },
+    {
+      title: "6 Dimensiones Estratégicas del PDI",
+      category: "PDI",
+      badgeColor: "bg-blue-100 text-blue-800 border-blue-300",
+      url: "/plan-desarrollo#dimensiones",
+      keywords: ["dimensiones", "gobierno", "docencia grado", "posgrado", "investigacion", "extension", "vinculacion", "infraestructura", "aulas hibridas", "laboratorios"],
+      snippet: "Ejes estratégicos integrados: Gobierno y Gestión, Grado, Posgrado, CyT, Extensión y Vinculación Territorial, e Infraestructura."
+    },
+    {
+      title: "Beneficios del PDI para Estudiantes, Docentes y Nodocentes",
+      category: "PDI",
+      badgeColor: "bg-blue-100 text-blue-800 border-blue-300",
+      url: "/plan-desarrollo#beneficios-claustros",
+      keywords: ["beneficios claustros", "tutorias", "inteligencia artificial", "ia asistente", "concursos docentes", "regularizacion", "escuela de graduados", "becas"],
+      snippet: "Tutorías de pares, asistente IA, regularización docente por concurso (meta 85%), Escuela de Graduados y digitalización para nodocentes."
+    },
+    {
+      title: "Metas Cuantitativas al 2036, Financiamiento y SIAC",
+      category: "PDI",
+      badgeColor: "bg-blue-100 text-blue-800 border-blue-300",
+      url: "/plan-desarrollo#metas-monitoreo",
+      keywords: ["metas 2036", "indicadores", "financiamiento", "presupuesto", "tesoro nacional", "catec", "fundacion unlu", "portal de transparencia", "monitoreo"],
+      snippet: "Metas decenales: abandono al 35%, planta ordinaria al 85%, +50% en publicaciones Scopus y monitoreo anual en el marco del SIAC."
+    },
+    {
+      title: "Descargar Propuesta PDI 2026-2036 (PDF)",
+      category: "Documento PDF",
+      badgeColor: "bg-red-100 text-red-800 border-red-300",
+      url: "/Propuesta-PDI-2026-2036.pdf",
+      isExternal: true,
+      keywords: ["propuesta pdi pdf", "descargar pdi", "documento pdi 2026-2036", "pdf pdi"],
+      snippet: "Descarga del documento completo de la propuesta del Plan de Desarrollo Institucional."
+    },
+    {
+      title: "Descargar Resolución PDI RESHCS: 492/2026 (PDF)",
+      category: "Documento PDF",
+      badgeColor: "bg-red-100 text-red-800 border-red-300",
+      url: "/Res-PDI.pdf",
+      isExternal: true,
+      keywords: ["resolucion pdi pdf", "descargar resolucion pdi", "reshcs 492/2026 pdf", "anexo unico pdf"],
+      snippet: "Descarga de la resolución de aprobación del PDI y su Anexo Único."
+    },
+
+    // --- AUTOEVALUACIÓN INSTITUCIONAL ---
+    {
+      title: "Informe de Autoevaluación Institucional",
+      category: "Autoevaluación",
+      badgeColor: "bg-amber-100 text-amber-800 border-amber-300",
+      url: "/autoevaluacion#informe",
+      keywords: ["autoevaluacion", "informe autoevaluacion", "evaluacion institucional", "coneau", "descargar informe", "dimensiones hcs"],
+      snippet: "Acceso al informe final y proceso integral de autoevaluación institucional de la UNLu."
+    },
+    {
+      title: "Encuestas y Análisis de Claustros",
+      category: "Autoevaluación",
+      badgeColor: "bg-amber-100 text-amber-800 border-amber-300",
+      url: "/autoevaluacion#encuestas",
+      keywords: ["encuestas", "analisis", "estudiantes", "docentes", "nodocentes", "graduados", "organizaciones", "zona de influencia", "resultados"],
+      snippet: "Relevamiento y sistematización de percepciones y datos de todos los claustros y organizaciones de la región."
+    },
+    {
+      title: "Entrevistas y Medios de Comunicación",
+      category: "Autoevaluación",
+      badgeColor: "bg-amber-100 text-amber-800 border-amber-300",
+      url: "/autoevaluacion#entrevistas",
+      keywords: ["entrevistas", "radio unlu", "videos", "youtube", "soundcloud", "comunicacion", "mario oloriz", "patricia azparren", "walter panessi"],
+      snippet: "Registro audiovisual y radial de las iniciativas de sensibilización del proceso de autoevaluación."
+    },
+
+    // --- LA SECRETARÍA ---
+    {
+      title: "Misión, Visión y Valores de la Secretaría",
+      category: "La Secretaría",
+      badgeColor: "bg-purple-100 text-purple-800 border-purple-300",
+      url: "/la-secretaria#mision",
+      keywords: ["mision", "vision", "valores", "secretaria de planeamiento", "rectorado", "principios"],
+      snippet: "Propósito, objetivos institucionales y valores de la Secretaría de Planeamiento de la UNLu."
+    },
+    {
+      title: "Autoridades y Equipo de Trabajo",
+      category: "La Secretaría",
+      badgeColor: "bg-purple-100 text-purple-800 border-purple-300",
+      url: "/la-secretaria#autoridades",
+      keywords: ["autoridades", "equipo", "secretaria", "direccion de evaluacion", "direccion de planeamiento", "quienes somos"],
+      snippet: "Estructura organizativa y autoridades de la Secretaría de Planeamiento."
+    },
+    {
+      title: "Actividades y Funciones",
+      category: "La Secretaría",
+      badgeColor: "bg-purple-100 text-purple-800 border-purple-300",
+      url: "/la-secretaria#actividades",
+      keywords: ["actividades", "funciones", "coordinacion", "estadisticas", "indicadores", "capacitacion"],
+      snippet: "Líneas de trabajo, coordinación institucional y generación de información estratégica."
+    },
+
+    // --- CONTACTO ---
+    {
+      title: "Cómo llegar y Horarios de Atención",
+      category: "Contacto",
+      badgeColor: "bg-sky-100 text-sky-800 border-sky-300",
+      url: "/contacto#atencion-card",
+      keywords: ["contacto", "horarios", "como llegar", "mapa", "ubicacion", "edificio 8", "rectorado", "lunes a viernes"],
+      snippet: "Atención al público de lunes a viernes de 8:00 a 16:00 hs en Edificio 8 — Rectorado, Sede Luján."
+    },
+    {
+      title: "Formulario de Consulta Online",
+      category: "Contacto",
+      badgeColor: "bg-sky-100 text-sky-800 border-sky-300",
+      url: "/contacto#contact-form",
+      keywords: ["formulario", "consulta", "enviar mensaje", "mail", "correo", "escribirnos"],
+      snippet: "Envío directo de consultas y mensajes a la Secretaría de Planeamiento."
+    },
+    {
+      title: "Teléfono, Internos y Correo Electrónico",
+      category: "Contacto",
+      badgeColor: "bg-sky-100 text-sky-800 border-sky-300",
+      url: "/contacto",
+      keywords: ["telefono", "interno", "correo", "email", "planeamiento@unlu.edu.ar", "guiatel", "445100", "int 1572"],
+      snippet: "Tel: +54 (02323) 445100 · Mail: planeamiento@unlu.edu.ar · Interno 1572."
+    }
+  ];
+
+  function normalize(str: string): string {
+    return str
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim();
+  }
+
+  function search(query: string): SearchItem[] {
+    const rawQ = normalize(query);
+    if (!rawQ || rawQ.length < 2) return [];
+
+    const tokens = rawQ.split(/\s+/).filter(t => t.length > 0);
+
+    const scored = SEARCH_INDEX.map(item => {
+      let score = 0;
+      const titleNorm = normalize(item.title);
+      const categoryNorm = normalize(item.category);
+      const snippetNorm = normalize(item.snippet);
+      const keywordsNorm = item.keywords.map(k => normalize(k)).join(" ");
+
+      // Exact phrase match in title
+      if (titleNorm.includes(rawQ)) score += 100;
+      // Exact phrase in category or keywords
+      if (keywordsNorm.includes(rawQ)) score += 60;
+      if (snippetNorm.includes(rawQ)) score += 40;
+
+      // Token matches
+      tokens.forEach(tok => {
+        if (titleNorm.includes(tok)) score += 30;
+        if (keywordsNorm.includes(tok)) score += 20;
+        if (snippetNorm.includes(tok)) score += 10;
+        if (categoryNorm.includes(tok)) score += 15;
+      });
+
+      return { item, score };
+    });
+
+    return scored
+      .filter(s => s.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .map(s => s.item);
+  }
+
+  function highlightMatches(text: string, query: string): string {
+    if (!query) return text;
+    const tokens = normalize(query).split(/\s+/).filter(t => t.length > 0);
+    if (tokens.length === 0) return text;
+    const pattern = new RegExp(`(${tokens.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'gi');
+    return text.replace(pattern, '<mark class="bg-amber-200 text-gray-900 rounded-xs px-0.5 font-bold">$1</mark>');
+  }
+
+  function renderSearchResults(results: SearchItem[], query: string, containerEl: HTMLElement | null) {
+    if (!containerEl) return;
+    if (!query || query.trim().length < 2) {
+      containerEl.classList.add('hidden');
+      containerEl.innerHTML = '';
+      return;
+    }
+
+    containerEl.classList.remove('hidden');
+
+    if (results.length === 0) {
+      containerEl.innerHTML = `
+        <div class="p-4 text-center text-xs text-gray-500">
+          <p class="font-bold text-gray-700 mb-1">No se encontraron resultados para "${query}"</p>
+          <p class="text-[11px] text-gray-400">Intenta buscando: <span class="font-semibold text-unlu-green">SIAC, PDI, tutorías, encuestas, autoridades</span></p>
+        </div>
+      `;
+      return;
+    }
+
+    const header = `
+      <div class="px-3 py-1.5 bg-gray-50 text-[10px] font-bold uppercase tracking-wider text-gray-500 flex items-center justify-between border-b border-gray-100">
+        <span>${results.length} resultado${results.length > 1 ? 's' : ''} encontrado${results.length > 1 ? 's' : ''}</span>
+        <span class="text-[9px] text-gray-400">Presiona Enter para ir</span>
+      </div>
+    `;
+
+    const itemsHtml = results.slice(0, 6).map((res, idx) => `
+      <a
+        href="${res.url}"
+        target="${res.isExternal ? '_blank' : '_self'}"
+        class="search-result-item block p-3 hover:bg-emerald-50/60 transition-colors cursor-pointer group ${idx === 0 ? 'bg-emerald-50/30' : ''}"
+        data-index="${idx}"
+      >
+        <div class="flex items-center gap-2 mb-1">
+          <span class="text-[10px] font-bold px-2 py-0.5 rounded-full border ${res.badgeColor}">
+            ${res.category}
+          </span>
+          <span class="text-xs font-bold text-gray-900 group-hover:text-unlu-green font-sans leading-tight">
+            ${highlightMatches(res.title, query)}
+          </span>
+          ${res.isExternal ? '<span class="text-[10px] text-red-600 font-bold ml-auto">PDF ↗</span>' : ''}
+        </div>
+        <p class="text-[11px] text-gray-600 line-clamp-2 leading-relaxed">
+          ${highlightMatches(res.snippet, query)}
+        </p>
+      </a>
+    `).join('');
+
+    containerEl.innerHTML = header + itemsHtml;
+  }
+
+  // --- CONFIGURACIÓN DE BUSCADOR DESKTOP ---
+  const searchInput = document.getElementById('nav-search-input') as HTMLInputElement | null;
+  const searchForm = document.getElementById('nav-search-form') as HTMLFormElement | null;
+  const searchResults = document.getElementById('nav-search-results');
+  const searchClear = document.getElementById('nav-search-clear');
+  const searchContainer = document.getElementById('nav-search-container');
+
+  let activeDesktopResults: SearchItem[] = [];
+
+  if (searchInput && searchResults) {
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.trim();
+      if (searchClear) {
+        if (q.length > 0) searchClear.classList.remove('hidden');
+        else searchClear.classList.add('hidden');
+      }
+      activeDesktopResults = search(q);
+      renderSearchResults(activeDesktopResults, q, searchResults);
+    });
+
+    searchInput.addEventListener('focus', () => {
+      if (searchInput.value.trim().length >= 2) {
+        activeDesktopResults = search(searchInput.value.trim());
+        renderSearchResults(activeDesktopResults, searchInput.value.trim(), searchResults);
+      }
+    });
+
+    if (searchClear) {
+      searchClear.addEventListener('click', () => {
+        searchInput.value = '';
+        searchClear.classList.add('hidden');
+        searchResults.classList.add('hidden');
+        searchInput.focus();
+      });
+    }
+
+    if (searchForm) {
+      searchForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (activeDesktopResults.length > 0) {
+          const first = activeDesktopResults[0];
+          if (first.isExternal) {
+            window.open(first.url, '_blank');
+          } else {
+            window.location.href = first.url;
+          }
+          searchResults.classList.add('hidden');
+        }
+      });
+    }
+
+    // Cerrar al hacer clic afuera
+    document.addEventListener('click', (e) => {
+      if (searchContainer && !searchContainer.contains(e.target as Node)) {
+        searchResults.classList.add('hidden');
+      }
+    });
+
+    // Atajo de teclado Escape para cerrar
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && searchResults) {
+        searchResults.classList.add('hidden');
+      }
+      // Atajo Ctrl+K o '/' para enfocar buscador
+      if ((e.ctrlKey && e.key === 'k') || (e.key === '/' && document.activeElement !== searchInput)) {
+        e.preventDefault();
+        searchInput.focus();
+      }
+    });
+  }
+
+  // --- CONFIGURACIÓN DE BUSCADOR MOBILE ---
+  const mobileSearchInput = document.getElementById('mobile-search-input') as HTMLInputElement | null;
+  const mobileSearchResults = document.getElementById('mobile-search-results');
+  const mobileSearchSubmit = document.getElementById('mobile-search-submit');
+
+  let activeMobileResults: SearchItem[] = [];
+
+  if (mobileSearchInput && mobileSearchResults) {
+    mobileSearchInput.addEventListener('input', () => {
+      const q = mobileSearchInput.value.trim();
+      activeMobileResults = search(q);
+      renderSearchResults(activeMobileResults, q, mobileSearchResults);
+    });
+
+    if (mobileSearchSubmit) {
+      mobileSearchSubmit.addEventListener('click', () => {
+        if (activeMobileResults.length > 0) {
+          const first = activeMobileResults[0];
+          closeMenu();
+          if (first.isExternal) {
+            window.open(first.url, '_blank');
+          } else {
+            window.location.href = first.url;
+          }
+        }
+      });
+    }
   }
 </script>
