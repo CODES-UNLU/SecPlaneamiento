@@ -1,0 +1,154 @@
+---
+/**
+ * Componente: AccessibilityToolbar
+ * Barra de accesibilidad institucional con controles de tamaño de texto, alto contraste y tipografía accesible.
+ */
+---
+
+<div class="bg-slate-900 text-slate-100 text-xs py-1 px-4 border-b border-slate-800" role="region" aria-label="Herramientas de accesibilidad">
+  <div class="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-2">
+    <div class="flex items-center gap-3">
+      <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-wider hidden sm:inline-flex items-center gap-1">
+        <svg class="w-3.5 h-3.5 text-unlu-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        Accesibilidad UNLu
+      </span>
+    </div>
+
+    <div class="flex items-center gap-2 sm:gap-4">
+      <!-- Ajuste de tamaño de fuente -->
+      <div class="flex items-center bg-slate-800 rounded px-1 py-0.5" role="group" aria-label="Ajustar tamaño del texto">
+        <button
+          id="btn-font-dec"
+          type="button"
+          class="px-2 py-0.5 text-slate-300 hover:text-white hover:bg-slate-700 rounded transition font-bold cursor-pointer"
+          title="Disminuir tamaño de letra"
+          aria-label="Disminuir tamaño de letra"
+        >
+          A-
+        </button>
+        <button
+          id="btn-font-reset"
+          type="button"
+          class="px-2 py-0.5 text-slate-300 hover:text-white hover:bg-slate-700 rounded transition font-semibold cursor-pointer"
+          title="Restablecer tamaño de letra"
+          aria-label="Restablecer tamaño de letra"
+        >
+          A
+        </button>
+        <button
+          id="btn-font-inc"
+          type="button"
+          class="px-2 py-0.5 text-slate-300 hover:text-white hover:bg-slate-700 rounded transition font-bold cursor-pointer"
+          title="Aumentar tamaño de letra"
+          aria-label="Aumentar tamaño de letra"
+        >
+          A+
+        </button>
+      </div>
+
+      <!-- Modo Alto Contraste -->
+      <button
+        id="btn-contrast"
+        type="button"
+        class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded font-medium transition cursor-pointer"
+        title="Alternar modo de alto contraste"
+        aria-pressed="false"
+      >
+        <svg class="w-3.5 h-3.5 text-unlu-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+        <span class="hidden sm:inline">Alto Contraste</span>
+      </button>
+
+      <!-- Fuente de Lectura Fácil / Dislexia -->
+      <button
+        id="btn-dyslexic"
+        type="button"
+        class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded font-medium transition cursor-pointer"
+        title="Alternar tipografía de lectura clara"
+        aria-pressed="false"
+      >
+        <span>📖</span>
+        <span class="hidden sm:inline">Lectura Fácil</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function() {
+    const root = document.documentElement;
+    let fontScale = 100;
+
+    // Cargar preferencias guardadas
+    try {
+      const savedScale = localStorage.getItem('unlu_a11y_font_scale');
+      if (savedScale) {
+        fontScale = parseInt(savedScale, 10);
+        applyFontScale(fontScale);
+      }
+      if (localStorage.getItem('unlu_a11y_contrast') === 'true') {
+        root.classList.add('a11y-high-contrast');
+        updateContrastBtn(true);
+      }
+      if (localStorage.getItem('unlu_a11y_dyslexic') === 'true') {
+        root.classList.add('a11y-dyslexic-font');
+        updateDyslexicBtn(true);
+      }
+    } catch(e) {}
+
+    function applyFontScale(scale) {
+      root.style.fontSize = scale === 100 ? '' : `${scale}%`;
+      try {
+        localStorage.setItem('unlu_a11y_font_scale', scale.toString());
+      } catch(e) {}
+    }
+
+    function updateContrastBtn(active) {
+      const btn = document.getElementById('btn-contrast');
+      if (btn) btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    }
+
+    function updateDyslexicBtn(active) {
+      const btn = document.getElementById('btn-dyslexic');
+      if (btn) btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    }
+
+    document.getElementById('btn-font-inc')?.addEventListener('click', () => {
+      if (fontScale < 130) {
+        fontScale += 10;
+        applyFontScale(fontScale);
+      }
+    });
+
+    document.getElementById('btn-font-dec')?.addEventListener('click', () => {
+      if (fontScale > 90) {
+        fontScale -= 10;
+        applyFontScale(fontScale);
+      }
+    });
+
+    document.getElementById('btn-font-reset')?.addEventListener('click', () => {
+      fontScale = 100;
+      applyFontScale(fontScale);
+    });
+
+    document.getElementById('btn-contrast')?.addEventListener('click', () => {
+      const isActive = root.classList.toggle('a11y-high-contrast');
+      updateContrastBtn(isActive);
+      try {
+        localStorage.setItem('unlu_a11y_contrast', isActive ? 'true' : 'false');
+      } catch(e) {}
+    });
+
+    document.getElementById('btn-dyslexic')?.addEventListener('click', () => {
+      const isActive = root.classList.toggle('a11y-dyslexic-font');
+      updateDyslexicBtn(isActive);
+      try {
+        localStorage.setItem('unlu_a11y_dyslexic', isActive ? 'true' : 'false');
+      } catch(e) {}
+    });
+  })();
+</script>

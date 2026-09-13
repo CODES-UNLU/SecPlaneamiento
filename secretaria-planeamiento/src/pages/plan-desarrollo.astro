@@ -6,9 +6,20 @@
 import Layout from "../layouts/Layout.astro";
 import BlockRenderer from "../blocks/BlockRenderer.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
+import TableOfContents from "../components/TableOfContents.astro";
 import pageData from "../data/pages/plan-desarrollo.json";
 
 const { meta, blocks } = pageData;
+
+const tocItems = [
+  { id: "pdi-banner-form-proyectos", title: "Formulario de Proyectos" },
+  { id: "pdi", title: "Fundamentos y Propósito" },
+  { id: "metodologia-diagnostico", title: "Metodología y Diagnóstico" },
+  { id: "dimensiones", title: "Las 6 Dimensiones" },
+  { id: "beneficios-claustros", title: "Impacto en Claustros" },
+  { id: "pdi-documentos-oficiales", title: "Repositorio Documental" },
+  { id: "metas-monitoreo", title: "Metas 2036 y SIAC" },
+];
 ---
 
 <Layout 
@@ -33,7 +44,12 @@ const { meta, blocks } = pageData;
   </section>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10" id="page-blocks-wrapper">
-    <BlockRenderer blocks={blocks} />
+    <div class="flex items-start gap-10">
+      <div class="flex-1 min-w-0">
+        <BlockRenderer blocks={blocks} />
+      </div>
+      <TableOfContents items={tocItems} />
+    </div>
   </div>
 </Layout>
 

@@ -1,4 +1,4 @@
-﻿---
+---
 /**
  * Página de Inicio: Portal de la Secretaría de Planeamiento - UNLu
  */
@@ -194,6 +194,86 @@ import StatCard from "../components/StatCard.astro";
     </div>
   </section>
 
+  <!-- BITÁCORA Y AVANCES: PLANEAMIENTO EN MARCHA -->
+  <section class="py-14 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-[0.18em] text-unlu-green block mb-1">PROCESO VIVO Y PARTICIPATIVO</span>
+          <h2 class="text-xl sm:text-2xl font-bold font-serif text-gray-900">
+            Planeamiento en Marcha: Hitos y Avances Recientes
+          </h2>
+        </div>
+        <a href="/plan-desarrollo" class="text-xs font-bold text-unlu-green hover:underline flex items-center gap-1">
+          <span>Ver cronograma decenal</span>
+          <span>→</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Hito 1 -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-[10px] font-bold text-unlu-green uppercase tracking-wider bg-emerald-50 px-2 py-0.5 rounded-full">Normativa Clave</span>
+              <span class="text-xs text-slate-400 font-semibold">Julio 2026</span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 font-serif mb-2">
+              Sanción unánime del PDI 2026–2036
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              El HCS aprobó la Res. 492/2026 fijando 137 proyectos estratégicos para la próxima década universitaria.
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+            <span class="text-slate-500 font-medium">Res. HCS 492/2026</span>
+            <a href="/Res-PDI.pdf" target="_blank" rel="noopener noreferrer" class="font-bold text-unlu-green hover:underline">Descargar ↗</a>
+          </div>
+        </div>
+
+        <!-- Hito 2 -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-[10px] font-bold text-amber-700 uppercase tracking-wider bg-amber-50 px-2 py-0.5 rounded-full">Participación Abierta</span>
+              <span class="text-xs text-slate-400 font-semibold">Convocatoria Continua</span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 font-serif mb-2">
+              Presentación Digital de Proyectos
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Canal activo para que claustros y departamentos eleven propuestas y acciones alineadas a las 6 dimensiones.
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+            <span class="text-slate-500 font-medium">Formulario Online</span>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScrzzB-ymvYq5UZYKbfkJWwH7X0rivtEq3I7xyV9QzcJ763rQ/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="font-bold text-unlu-green hover:underline">Cargar Propuesta ↗</a>
+          </div>
+        </div>
+
+        <!-- Hito 3 -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-[10px] font-bold text-blue-700 uppercase tracking-wider bg-blue-50 px-2 py-0.5 rounded-full">Capacitación y ODS</span>
+              <span class="text-xs text-slate-400 font-semibold">UNLu Sostenible</span>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 font-serif mb-2">
+              Lanzamiento Ciclo de Capacitación ODS
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Disertaciones sobre el rol universitario en la Agenda 2030 a cargo de las Dras. Adriana Martínez y Adriana Rosenfeld.
+            </p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+            <span class="text-slate-500 font-medium">Video Conferencia (39 min)</span>
+            <a href="/la-secretaria#ods-sostenible" class="font-bold text-unlu-green hover:underline">Ver Detalle →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- DOCUMENTOS DESTACADOS -->
   <section class="bg-gradient-to-br from-gray-50 to-gray-100 py-14 border-t border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -221,11 +301,14 @@ import StatCard from "../components/StatCard.astro";
             📄
           </div>
           <div>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-gray-400 block mb-0.5">PLAN 2026–2036</span>
+            <div class="flex items-center gap-1.5 mb-1">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-gray-500">PLAN 2026–2036</span>
+              <span class="text-[9px] font-bold bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded">PDF · 3.2 MB</span>
+            </div>
             <strong class="text-xs font-bold text-gray-900 group-hover:text-unlu-green block leading-snug">
               Propuesta PDI 2026–2036
             </strong>
-            <span class="text-[11px] text-gray-500 block mt-1">Documento completo de planificación decenal</span>
+            <span class="text-[11px] text-gray-500 block mt-1">Documento completo de planificación decenal (6 dimensiones)</span>
           </div>
         </a>
 
@@ -239,11 +322,14 @@ import StatCard from "../components/StatCard.astro";
             📜
           </div>
           <div>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-gray-400 block mb-0.5">RESOLUCIÓN HCS</span>
+            <div class="flex items-center gap-1.5 mb-1">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-gray-500">RESOLUCIÓN HCS</span>
+              <span class="text-[9px] font-bold bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded">PDF · 1.8 MB</span>
+            </div>
             <strong class="text-xs font-bold text-gray-900 group-hover:text-unlu-green block leading-snug">
               Resolución RESHCS: 492/2026
             </strong>
-            <span class="text-[11px] text-gray-500 block mt-1">Aprobación del PDI y Anexo Único</span>
+            <span class="text-[11px] text-gray-500 block mt-1">Aprobación unánime del PDI y Anexo Único</span>
           </div>
         </a>
 
@@ -257,7 +343,10 @@ import StatCard from "../components/StatCard.astro";
             🛡️
           </div>
           <div>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-gray-400 block mb-0.5">RESOLUCIÓN HCS</span>
+            <div class="flex items-center gap-1.5 mb-1">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-gray-500">RESOLUCIÓN HCS</span>
+              <span class="text-[9px] font-bold bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded">PDF · 1.2 MB</span>
+            </div>
             <strong class="text-xs font-bold text-gray-900 group-hover:text-unlu-green block leading-snug">
               Resolución RESHCS: 890/2025
             </strong>

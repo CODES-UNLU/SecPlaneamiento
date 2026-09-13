@@ -50,3 +50,33 @@
   ::-webkit-scrollbar-track { background: #f1f5f9; }
   ::-webkit-scrollbar-thumb { background: #008541; border-radius: 4px; }
 }
+
+/* Modos de Accesibilidad */
+html.a11y-high-contrast {
+  filter: contrast(135%);
+}
+
+html.a11y-high-contrast body {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+html.a11y-high-contrast a {
+  text-decoration: underline !important;
+  font-weight: 700 !important;
+}
+
+html.a11y-dyslexic-font,
+html.a11y-dyslexic-font body,
+html.a11y-dyslexic-font h1,
+html.a11y-dyslexic-font h2,
+html.a11y-dyslexic-font h3,
+html.a11y-dyslexic-font p,
+html.a11y-dyslexic-font span,
+html.a11y-dyslexic-font a,
+html.a11y-dyslexic-font button {
+  font-family: 'Comic Sans MS', 'Trebuchet MS', 'Arial', sans-serif !important;
+  letter-spacing: 0.04em !important;
+  line-height: 1.8 !important;
+}
+

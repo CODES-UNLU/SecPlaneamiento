@@ -5,6 +5,7 @@
  * utilidades de accesibilidad WCAG 2.1 AA (Skip link) y configuración base.
  */
 import "../styles/global.css";
+import AccessibilityToolbar from "../components/AccessibilityToolbar.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import AdminBar from "../components/admin/AdminBar.astro";
@@ -152,6 +153,9 @@ const jsonLd = {
 
     <!-- Barra flotante de administración (solo en vistas públicas) -->
     {!isAdminPage && <AdminBar currentPageTitle={title} currentPageId={activeSection} />}
+
+    <!-- Barra de accesibilidad institucional WCAG -->
+    <AccessibilityToolbar />
 
     <!-- Barra de navegación superior -->
     <Navbar activeSection={activeSection} />
