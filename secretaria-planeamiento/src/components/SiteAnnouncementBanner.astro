@@ -1,0 +1,143 @@
+---
+/**
+ * Componente: SiteAnnouncementBanner
+ * Banner superior de avisos y novedades institucionales.
+ * Carga valores predeterminados de servidor y se sincroniza reactivamente
+ * con las modificaciones realizadas en el Dashboard de Administración (/admin).
+ */
+---
+
+<div
+  id="site-dynamic-banner"
+  class="relative z-40 transition-all duration-300 font-sans border-b"
+  style="display: none;"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex flex-col sm:flex-row items-center justify-between gap-2.5 sm:gap-4 text-xs sm:text-sm">
+    <div class="flex items-center gap-2.5 text-center sm:text-left">
+      <span id="site-banner-icon" class="text-base sm:text-lg shrink-0">📢</span>
+      <div class="flex items-center gap-2 flex-wrap justify-center sm:justify-start">
+        <span
+          id="site-banner-badge"
+          class="inline-block text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-md font-sans"
+        >
+          AVISO DESTACADO
+        </span>
+        <span id="site-banner-text" class="font-medium text-slate-900 leading-snug">
+          Convocatoria abierta para la presentación de Proyectos y Propuestas en el marco del PDI 2026–2036.
+        </span>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2 shrink-0">
+      <a
+        id="site-banner-btn"
+        href="https://docs.google.com/forms/d/e/1FAIpQLScrzzB-ymvYq5UZYKbfkJWwH7X0rivtEq3I7xyV9QzcJ763rQ/viewform?usp=header"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 font-bold text-xs px-3.5 py-1.5 rounded-lg shadow-xs transition-transform active:scale-95"
+      >
+        <span id="site-banner-btn-text">Presentar Proyecto ↗</span>
+      </a>
+
+      <button
+        type="button"
+        id="site-banner-close-btn"
+        class="p-1 rounded-md opacity-70 hover:opacity-100 transition-opacity cursor-pointer text-slate-700"
+        title="Ocultar aviso temporalmente"
+        aria-label="Cerrar aviso"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function() {
+    function applyDynamicBanner() {
+      const bannerContainer = document.getElementById('site-dynamic-banner');
+      if (!bannerContainer) return;
+
+      // Verificar si el usuario lo cerró en esta sesión de navegación
+      if (sessionStorage.getItem('unlu_banner_dismissed') === 'true') {
+        bannerContainer.style.display = 'none';
+        return;
+      }
+
+      let data = null;
+      try {
+        const saved = localStorage.getItem('unlu_site_dynamic_content');
+        if (saved) {
+          data = JSON.parse(saved);
+        }
+      } catch (e) {
+        console.error("Error al leer dynamic content", e);
+      }
+
+      const banner = data?.banner || {
+        active: true,
+        style: "gold",
+        text: "Convocatoria abierta para la presentación de Proyectos y Propuestas en el marco del PDI 2026–2036.",
+        btnText: "Presentar Proyecto ↗",
+        url: "https://docs.google.com/forms/d/e/1FAIpQLScrzzB-ymvYq5UZYKbfkJWwH7X0rivtEq3I7xyV9QzcJ763rQ/viewform?usp=header"
+      };
+
+      if (!banner.active) {
+        bannerContainer.style.display = 'none';
+        return;
+      }
+
+      const textEl = document.getElementById('site-banner-text');
+      const badgeEl = document.getElementById('site-banner-badge');
+      const btnEl = document.getElementById('site-banner-btn');
+      const btnTextEl = document.getElementById('site-banner-btn-text');
+
+      if (textEl) textEl.textContent = banner.text || 'Aviso destacado de la Secretaría de Planeamiento';
+      if (btnEl) btnEl.href = banner.url || '#';
+      if (btnTextEl) btnTextEl.textContent = banner.btnText || 'Ver Más →';
+
+      // Aplicar paleta según estilo
+      const style = banner.style || 'gold';
+      if (style === 'gold') {
+        bannerContainer.className = "relative z-40 transition-all duration-300 font-sans border-b bg-amber-50 border-amber-300 text-amber-950 shadow-xs";
+        if (badgeEl) badgeEl.className = "inline-block text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-md bg-amber-200/90 text-amber-900 border border-amber-300";
+        if (btnEl) btnEl.className = "inline-flex items-center gap-1.5 font-bold text-xs px-3.5 py-1.5 rounded-lg shadow-xs transition-transform active:scale-95 bg-unlu-green hover:bg-unlu-green-dark text-white";
+      } else if (style === 'green') {
+        bannerContainer.className = "relative z-40 transition-all duration-300 font-sans border-b bg-emerald-50 border-emerald-300 text-emerald-950 shadow-xs";
+        if (badgeEl) badgeEl.className = "inline-block text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-md bg-emerald-200/90 text-emerald-900 border border-emerald-300";
+        if (btnEl) btnEl.className = "inline-flex items-center gap-1.5 font-bold text-xs px-3.5 py-1.5 rounded-lg shadow-xs transition-transform active:scale-95 bg-emerald-700 hover:bg-emerald-800 text-white";
+      } else if (style === 'blue') {
+        bannerContainer.className = "relative z-40 transition-all duration-300 font-sans border-b bg-blue-50 border-blue-300 text-blue-950 shadow-xs";
+        if (badgeEl) badgeEl.className = "inline-block text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-md bg-blue-200/90 text-blue-900 border border-blue-300";
+        if (btnEl) btnEl.className = "inline-flex items-center gap-1.5 font-bold text-xs px-3.5 py-1.5 rounded-lg shadow-xs transition-transform active:scale-95 bg-blue-700 hover:bg-blue-800 text-white";
+      } else {
+        bannerContainer.className = "relative z-40 transition-all duration-300 font-sans border-b bg-red-50 border-red-300 text-red-950 shadow-xs";
+        if (badgeEl) badgeEl.className = "inline-block text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-md bg-red-200/90 text-red-900 border border-red-300";
+        if (btnEl) btnEl.className = "inline-flex items-center gap-1.5 font-bold text-xs px-3.5 py-1.5 rounded-lg shadow-xs transition-transform active:scale-95 bg-red-700 hover:bg-red-800 text-white";
+      }
+
+      bannerContainer.style.display = 'block';
+    }
+
+    // Ejecutar al cargar la página
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', applyDynamicBanner);
+    } else {
+      applyDynamicBanner();
+    }
+
+    // Escuchar eventos entre pestañas
+    window.addEventListener('storage', applyDynamicBanner);
+
+    // Botón cerrar aviso
+    document.addEventListener('click', function(e) {
+      if (e.target && e.target.closest('#site-banner-close-btn')) {
+        const bannerContainer = document.getElementById('site-dynamic-banner');
+        if (bannerContainer) bannerContainer.style.display = 'none';
+        sessionStorage.setItem('unlu_banner_dismissed', 'true');
+      }
+    });
+  })();
+</script>

@@ -804,6 +804,8 @@ const SERVER_DATA = {
 
   function saveDynamicData(data) {
     localStorage.setItem('unlu_site_dynamic_content', JSON.stringify(data));
+    sessionStorage.removeItem('unlu_banner_dismissed');
+    window.dispatchEvent(new Event('storage'));
     showToast("Cambios guardados con éxito.");
   }
 

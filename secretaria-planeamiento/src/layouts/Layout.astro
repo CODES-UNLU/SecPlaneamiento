@@ -6,6 +6,7 @@
  */
 import "../styles/global.css";
 import AccessibilityToolbar from "../components/AccessibilityToolbar.astro";
+import SiteAnnouncementBanner from "../components/SiteAnnouncementBanner.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import AdminBar from "../components/admin/AdminBar.astro";
@@ -156,6 +157,9 @@ const jsonLd = {
 
     <!-- Barra de accesibilidad institucional WCAG -->
     <AccessibilityToolbar />
+
+    <!-- Banner de avisos destacados dinámicos -->
+    {!isAdminPage && <SiteAnnouncementBanner />}
 
     <!-- Barra de navegación superior -->
     <Navbar activeSection={activeSection} />
