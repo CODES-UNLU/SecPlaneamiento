@@ -71,7 +71,7 @@ export const BLOCK_REGISTRY = [
     description: "Banner de enlace a documentos con estilo configurable (blanco o verde, tarjeta o botón).",
     fields: [
       { key: "etiqueta",   label: "Etiqueta superior",   type: "text", default: "DOCUMENTO PRINCIPAL" },
-      { key: "titulo",    label: "Título del documento", type: "text", placeholder: "Haga click aquí para acceder al Informe..." },
+      { key: "titulo",    label: "Título del documento", type: "text", placeholder: "Hacé click aquí para acceder al Informe..." },
       { key: "url",       label: "Enlace de destino",   type: "url",  placeholder: "https://drive.google.com/..." },
       { key: "estilo",    label: "Color de fondo",      type: "select", options: [{label: "🟢 Verde Institucional (Texto Blanco + Botón Dorado)", value: "verde"}, {label: "🤍 Blanco / Claro (Texto Verde + Icono Rojo)", value: "blanco"}] },
       { key: "tipoBoton", label: "Tipo de enlace",      type: "select", options: [{label: "🔘 Botón a la derecha", value: "boton"}, {label: "🔗 Toda la tarjeta es clickeable", value: "tarjeta"}] },
@@ -525,13 +525,13 @@ export const BLOCK_REGISTRY = [
     icon: "✉️",
     description: "Tarjeta blanca con encabezado y formulario de mensajes de consulta a la Secretaría.",
     fields: [
-      { key: "titulo",    label: "Título principal",  type: "text", default: "Envianos tu consulta" },
+      { key: "titulo",    label: "Título principal",  type: "text", default: "Envíanos tu consulta" },
       { key: "subtitulo", label: "Texto descriptivo", type: "text", default: "¿Necesitás realizar una consulta o comunicarte con la Secretaría de Planeamiento? Podés hacerlo a través de nuestro formulario de contacto." }
     ],
     render(p) {
       return `<div style="background:white;border-radius:1rem;border:1px solid #e2e8f0;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);margin-bottom:2.5rem;">
   <div style="background:linear-gradient(to right, #f8fafc, white);padding:1.5rem 2rem;border-bottom:1px solid #f1f5f9;">
-    <h2 style="font-size:1.25rem;font-weight:700;color:#111827;font-family:Georgia,serif;margin:0 0 0.25rem;">${p.titulo||'Envianos tu consulta'}</h2>
+    <h2 style="font-size:1.25rem;font-weight:700;color:#111827;font-family:Georgia,serif;margin:0 0 0.25rem;">${p.titulo||'Envíanos tu consulta'}</h2>
     <p style="font-size:0.875rem;color:#4b5563;margin:0;">${p.subtitulo||''}</p>
   </div>
   <div style="padding:2rem;">

@@ -13,11 +13,12 @@
   "blocks": [
     {
       "id": "block-cnt-atencion",
+      "anchorId": "atencion-card",
       "type": "card-atencion-mapa",
       "props": {
         "badge": "ATENCIÓN AL PÚBLICO",
         "horario": "Lunes a viernes · 8:00 a 16:00 hs.",
-        "descripcion": "Consultas presenciales y recepción de documentación en Mesa de Entradas del Rectorado. La Secretaría de Planeamiento se ubica en el Edificio 8 — Rectorado.",
+        "descripcion": "Consultas presenciales y recepción de documentación en Mesa de Entradas del Rectorado (Edificio 8 — Rectorado).",
         "urlMapa": "https://maps.app.goo.gl/LiaPfuTYbCt3FMuU6",
         "imagenMapa": "/mapa-unlu.png"
       }
@@ -38,9 +39,10 @@
     },
     {
       "id": "block-cnt-form",
+      "anchorId": "contact-form",
       "type": "card-formulario-contacto",
       "props": {
-        "titulo": "Envianos tu consulta",
+        "titulo": "Envíanos tu consulta",
         "subtitulo": "¿Tenés otra duda o consulta particular? Completá el formulario y nuestro equipo te responderá a la brevedad."
       }
     }

@@ -384,12 +384,16 @@ const navLinks = [
     const path = parts[0];
     const hash = parts[1];
 
-    if (hash && (path === '' || path === window.location.pathname)) {
-      const targetEl = document.getElementById(hash);
-      if (targetEl) {
-        e.preventDefault();
-        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        history.pushState(null, '', '#' + hash);
+    if (hash) {
+      const normalizePath = (p: string) => p.replace(/\/$/, '') || '/';
+      const isCurrentPage = path === '' || normalizePath(path) === normalizePath(window.location.pathname);
+      if (isCurrentPage) {
+        const targetEl = document.getElementById(hash);
+        if (targetEl) {
+          e.preventDefault();
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.pushState(null, '', '#' + hash);
+        }
       }
     }
   });
@@ -480,7 +484,7 @@ const navLinks = [
 
     // --- PLAN DE DESARROLLO INSTITUCIONAL ---
     {
-      title: "¿Qué es el Plan de Desarrollo Institucional (PDI 2026-2036)?",
+      title: "¿Qué es el Plan de Desarrollo Institucional (PDI 2026–2036)?",
       category: "PDI",
       badgeColor: "bg-blue-100 text-blue-800 border-blue-300",
       url: "/plan-desarrollo#pdi",
@@ -528,7 +532,7 @@ const navLinks = [
       snippet: "Metas decenales: abandono al 35%, planta ordinaria al 85%, +50% en publicaciones Scopus y monitoreo anual en el marco del SIAC."
     },
     {
-      title: "Descargar Propuesta PDI 2026-2036 (PDF)",
+      title: "Descargar Propuesta PDI 2026–2036 (PDF)",
       category: "Documento PDF",
       badgeColor: "bg-red-100 text-red-800 border-red-300",
       url: "/Propuesta-PDI-2026-2036.pdf",

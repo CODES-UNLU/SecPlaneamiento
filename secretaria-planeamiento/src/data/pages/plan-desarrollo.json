@@ -1,7 +1,7 @@
 {
   "pageId": "plan-desarrollo",
   "meta": {
-    "title": "Plan de Desarrollo Institucional 2026-2036 · Secretaría de Planeamiento UNLu",
+    "title": "Plan de Desarrollo Institucional 2026–2036 · Secretaría de Planeamiento UNLu",
     "activeSection": "plan-desarrollo",
     "heroTitle": "Plan de Desarrollo Institucional (PDI) 2026–2036",
     "heroBadge": "PLANIFICACIÓN ESTRATÉGICA · UNLu",
@@ -25,7 +25,7 @@
       "type": "cta-banner",
       "props": {
         "etiqueta": "DOCUMENTO PRINCIPAL · PDI 2026–2036",
-        "titulo": "Haga click aquí para acceder al Plan de Desarrollo Institucional (PDI) 2026-2036",
+        "titulo": "Hacé click aquí para acceder al Plan de Desarrollo Institucional (PDI) 2026–2036",
         "url": "/Propuesta-PDI-2026-2036.pdf",
         "textoBoton": "Acceder al PDI",
         "estilo": "blanco"
@@ -57,7 +57,7 @@
           "id": "pdi-datos-base",
           "type": "texto-rico",
           "props": {
-            "contenido": "<div style=\"background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #008541;border-radius:0.5rem;padding:1.25rem 1.5rem;margin:1.25rem 0;\"><h4 style=\"font-size:0.875rem;font-weight:700;color:#008541;text-transform:uppercase;letter-spacing:0.12em;margin:0 0 0.75rem;\">📊 Datos Institucionales al Inicio del PDI</h4><div style=\"display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:1rem;\"><div><strong style=\"display:block;font-size:1.25rem;color:#008541;\">27.692</strong><span style=\"font-size:0.8125rem;color:#4b5563;\">Estudiantes de grado/pregrado</span></div><div><strong style=\"display:block;font-size:1.25rem;color:#008541;\">750 - 1.000</strong><span style=\"font-size:0.8125rem;color:#4b5563;\">Titulaciones anuales</span></div><div><strong style=\"display:block;font-size:1.25rem;color:#008541;\">2.568</strong><span style=\"font-size:0.8125rem;color:#4b5563;\">Cargos docentes</span></div><div><strong style=\"display:block;font-size:1.25rem;color:#008541;\">767</strong><span style=\"font-size:0.8125rem;color:#4b5563;\">Trabajadores Nodocentes</span></div><div><strong style=\"display:block;font-size:1.25rem;color:#008541;\">49</strong><span style=\"font-size:0.8125rem;color:#4b5563;\">Carreras (26 grado + 23 posgrado)</span></div><div><strong style=\"display:block;font-size:1.25rem;color:#008541;\">6 Sedes</strong><span style=\"font-size:0.8125rem;color:#4b5563;\">Sede Central y Centros Regionales</span></div></div></div>"
+            "contenido": "<div style=\"background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #008541;border-radius:0.5rem;padding:1.25rem 1.5rem;margin:1.25rem 0;\"><h4 style=\"font-size:0.875rem;font-weight:700;color:#008541;text-transform:uppercase;letter-spacing:0.12em;margin:0 0 0.75rem;\">📊 Datos Institucionales al Inicio del PDI</h4><div style=\"display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:1rem;\"><div><strong style=\"display:block;font-size:1.25rem;color:#008541;\">27.692</strong><span style=\"font-size:0.8125rem;color:#4b5563;\">Estudiantes de grado/pregrado</span></div><div><strong style=\"display:block;font-size:1.25rem;color:#008541;\">750–1.000</strong><span style=\"font-size:0.8125rem;color:#4b5563;\">Titulaciones anuales</span></div><div><strong style=\"display:block;font-size:1.25rem;color:#008541;\">2.568</strong><span style=\"font-size:0.8125rem;color:#4b5563;\">Cargos docentes</span></div><div><strong style=\"display:block;font-size:1.25rem;color:#008541;\">767</strong><span style=\"font-size:0.8125rem;color:#4b5563;\">Trabajadores Nodocentes</span></div><div><strong style=\"display:block;font-size:1.25rem;color:#008541;\">49</strong><span style=\"font-size:0.8125rem;color:#4b5563;\">Carreras (26 grado + 23 posgrado)</span></div><div><strong style=\"display:block;font-size:1.25rem;color:#008541;\">6 Sedes</strong><span style=\"font-size:0.8125rem;color:#4b5563;\">Sede Central y Centros Regionales</span></div></div></div>"
           }
         }
       ]
@@ -165,7 +165,7 @@
           {
             "titulo": "Formulario Digital de Presentación de Proyectos y Acciones",
             "tipo": "Formulario",
-            "anio": "2025/2026",
+            "anio": "2025–2026",
             "tamanio": "Google Forms",
             "url": "https://docs.google.com/forms/d/e/1FAIpQLScrzzB-ymvYq5UZYKbfkJWwH7X0rivtEq3I7xyV9QzcJ763rQ/viewform?usp=header",
             "destacado": true,

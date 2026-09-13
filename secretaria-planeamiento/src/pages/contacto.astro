@@ -97,7 +97,11 @@ const { meta = {}, blocks = [] } = pageData;
               <div class="min-w-0">
                 <span class="block text-[10px] font-bold uppercase tracking-wider text-white/50 mb-0.5">Teléfono</span>
                 <span class="block text-sm font-semibold text-white group-hover:text-unlu-gold transition-colors leading-snug" data-hero-phone>{meta.telefono || "+54 (02323) 445100"}</span>
-                <span class="text-xs font-bold text-unlu-gold">{meta.interno || "Interno 1200"}</span>
+                <div class="text-xs font-bold text-unlu-gold leading-tight mt-0.5 flex flex-wrap items-center gap-x-1.5 gap-y-0.5">
+                  <span class="whitespace-nowrap">Int. 1718 (Despacho)</span>
+                  <span class="text-white/40">/</span>
+                  <span class="whitespace-nowrap">Int. 1200 (Mesa de Entradas)</span>
+                </div>
               </div>
             </a>
             <button

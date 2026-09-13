@@ -4,16 +4,17 @@
     "title": "Autoevaluación Institucional · Secretaría de Planeamiento UNLu",
     "activeSection": "autoevaluacion",
     "heroTitle": "Autoevaluación Institucional",
-    "heroBadge": "AUTOEVALUACION INSTITUCIONAL",
+    "heroBadge": "AUTOEVALUACIÓN INSTITUCIONAL",
     "heroSubtitle": "Proceso de relevamiento, análisis de claustros e informes de autoevaluación de la Universidad Nacional de Luján."
   },
   "blocks": [
     {
       "id": "block-1",
+      "anchorId": "informe",
       "type": "cta-banner",
       "props": {
         "etiqueta": "DOCUMENTO PRINCIPAL",
-        "titulo": "Haga click aquí para acceder al Informe de la Autoevaluación Institucional",
+        "titulo": "Hacé click aquí para acceder al Informe de la Autoevaluación Institucional",
         "url": "https://drive.google.com/file/d/16iDGIcW67kV6GQcTB2XCJ1nAfPY4EOC-/view",
         "textoBoton": "Acceder al Informe"
       }
@@ -81,6 +82,7 @@
         },
         {
           "id": "sub-2-5",
+          "anchorId": "encuestas",
           "type": "titulo-bloque",
           "props": {
             "texto": "ENCUESTAS REALIZADAS A TODOS LOS CLAUSTROS DE LA UNLu Y ORGANIZACIONES DE LA ZONA DE INFLUENCIA",
