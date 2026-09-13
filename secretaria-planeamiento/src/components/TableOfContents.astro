@@ -17,12 +17,12 @@ const { items = [] } = Astro.props;
 
 {items.length > 0 && (
   <nav class="hidden xl:block w-72 shrink-0" aria-label="Tabla de contenidos">
-    <div class="sticky top-28 bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
-      <div class="flex items-center gap-2 mb-3 pb-2 border-b border-slate-100">
-        <svg class="w-4 h-4 text-unlu-green" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
-        </svg>
-        <span class="text-xs font-bold uppercase tracking-wider text-slate-700">En esta página</span>
+    <div class="sticky top-32 bg-white rounded-2xl border border-slate-200/90 p-5 shadow-sm max-h-[calc(100vh-10rem)] overflow-y-auto">
+      <div class="flex items-center gap-2 mb-3 pb-2.5 border-b border-slate-100">
+        <div class="w-6 h-6 rounded-lg bg-emerald-50 text-unlu-green flex items-center justify-center text-xs">
+          📑
+        </div>
+        <span class="text-xs font-bold uppercase tracking-wider text-slate-800 font-sans">En esta página</span>
       </div>
 
       <ul class="space-y-1 text-xs">
@@ -30,7 +30,7 @@ const { items = [] } = Astro.props;
           <li>
             <a
               href={`#${it.id}`}
-              class="toc-link block py-1.5 px-2 rounded text-slate-600 hover:text-unlu-green hover:bg-slate-50 transition leading-snug"
+              class="toc-link block py-2 px-3 rounded-lg text-slate-600 hover:text-unlu-green hover:bg-slate-50 transition-all leading-snug border-l-2 border-transparent"
               data-target-id={it.id}
             >
               {it.title}
@@ -38,6 +38,17 @@ const { items = [] } = Astro.props;
           </li>
         ))}
       </ul>
+
+      <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
+        <button
+          type="button"
+          onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+          class="text-slate-500 hover:text-unlu-green font-semibold flex items-center gap-1 cursor-pointer"
+        >
+          <span>↑</span>
+          <span>Volver arriba</span>
+        </button>
+      </div>
     </div>
   </nav>
 )}
