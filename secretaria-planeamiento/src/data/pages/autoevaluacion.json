@@ -15,11 +15,36 @@
         "etiqueta": "DOCUMENTO PRINCIPAL",
         "titulo": "Haga click aquí para acceder al Informe de la Autoevaluación Institucional",
         "url": "https://drive.google.com/file/d/16iDGIcW67kV6GQcTB2XCJ1nAfPY4EOC-/view",
-        "textoBoton": "Acceder"
+        "textoBoton": "Acceder al Informe"
       }
     },
     {
+      "id": "block-sensibilizacion",
+      "type": "seccion-badge",
+      "props": {
+        "badge": "MATERIAL AUDIOVISUAL INSTITUCIONAL",
+        "titulo": "Video de Sensibilización: ¿Por qué y para qué nos autoevaluamos?"
+      },
+      "children": [
+        {
+          "id": "sensib-intro",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<div style=\"background:linear-gradient(135deg, #008541 0%, #004d25 100%);color:white;border-radius:1rem;padding:2rem 2.5rem;box-shadow:0 4px 14px rgba(0,0,0,0.12);margin-bottom:1.5rem;position:relative;overflow:hidden;\"><div style=\"position:relative;z-index:10;\"><span style=\"display:inline-block;background:#f9c540;color:#111827;font-size:0.6875rem;font-weight:800;letter-spacing:0.15em;text-transform:uppercase;padding:0.25rem 0.75rem;border-radius:9999px;margin-bottom:0.75rem;\">Jornada de Sensibilización UNLu</span><h3 style=\"font-size:1.5rem;font-weight:700;color:white;font-family:Georgia,serif;margin:0 0 0.75rem;line-height:1.25;\">Conocé el valor de tu participación en el futuro de la UNLu</h3><p style=\"font-size:0.9375rem;color:rgba(255,255,255,0.9);line-height:1.7;margin:0 0 1.25rem;max-width:44rem;\">La autoevaluación no es un simple trámite administrativo: es el espacio democrático donde la comunidad universitaria reflexiona sobre sus fortalezas, identifica debilidades y define las prioridades de crecimiento para la próxima década.</p><div style=\"display:flex;flex-wrap:wrap;gap:1rem;\"><a href=\"https://www.youtube.com/watch?v=USB3P-5VUE8\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"display:inline-flex;align-items:center;gap:0.5rem;background:#f9c540;color:#111827;font-weight:800;font-size:0.875rem;padding:0.75rem 1.5rem;border-radius:0.5rem;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.15);\">▶️ Ver Video de Sensibilización (43 min)</a><a href=\"#proceso-autoevaluacion\" style=\"display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:white;font-weight:700;font-size:0.875rem;padding:0.75rem 1.25rem;border-radius:0.5rem;text-decoration:none;\">📋 Conocer las 6 Dimensiones</a></div></div></div>"
+          }
+        },
+        {
+          "id": "sensib-claves",
+          "type": "texto-rico",
+          "props": {
+            "contenido": "<h4 style=\"font-size:1.125rem;font-weight:700;color:#111827;font-family:Georgia,serif;margin:1.5rem 0 0.75rem;\">¿Qué vas a encontrar en este video?</h4><p style=\"color:#4b5563;font-size:0.875rem;line-height:1.6;margin-bottom:1rem;\">A lo largo del material, el equipo de la Secretaría de Planeamiento y autoridades universitarias desarrollan los ejes centrales del proceso:</p><div style=\"display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:1rem;margin:1.25rem 0;\"><div style=\"background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #008541;border-radius:0.5rem;padding:1rem 1.25rem;\"><strong style=\"color:#008541;font-size:0.875rem;display:block;margin-bottom:0.25rem;\">1. La Voz de los Claustros</strong><p style=\"font-size:0.8125rem;color:#4b5563;margin:0;\">Cómo las respuestas de estudiantes, docentes, nodocentes y graduados inciden directamente en los planes de estudio, becas e infraestructura.</p></div><div style=\"background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #f9c540;border-radius:0.5rem;padding:1rem 1.25rem;\"><strong style=\"color:#b07d2c;font-size:0.875rem;display:block;margin-bottom:0.25rem;\">2. Diagnóstico de las 6 Dimensiones</strong><p style=\"font-size:0.8125rem;color:#4b5563;margin:0;\">Revisión integral de Gobierno, Docencia, Investigación, Extensión, Vinculación y Recursos físicos y tecnológicos.</p></div><div style=\"background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #008541;border-radius:0.5rem;padding:1rem 1.25rem;\"><strong style=\"color:#008541;font-size:0.875rem;display:block;margin-bottom:0.25rem;\">3. Puente hacia el PDI 2026–2036</strong><p style=\"font-size:0.8125rem;color:#4b5563;margin:0;\">De qué manera los resultados de la autoevaluación se plasman en los 137 proyectos prioritarios del Plan Decenal de la UNLu.</p></div><div style=\"background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #c0392b;border-radius:0.5rem;padding:1rem 1.25rem;\"><strong style=\"color:#c0392b;font-size:0.875rem;display:block;margin-bottom:0.25rem;\">4. Evaluación Externa y Calidad</strong><p style=\"font-size:0.8125rem;color:#4b5563;margin:0;\">Preparación institucional ante los estándares de acreditación nacional asegurando la autonomía y misión territorial de la UNLu.</p></div></div>"
+          }
+        }
+      ]
+    },
+    {
       "id": "block-2",
+      "anchorId": "proceso-autoevaluacion",
       "type": "seccion-badge",
       "props": {
         "badge": "PROCESO",
@@ -86,11 +111,12 @@
     },
     {
       "id": "block-4",
+      "anchorId": "entrevistas",
       "type": "grilla-medios",
       "props": {
-        "badge": "COMUNICACIÓN",
-        "titulo": "Entrevistas",
-        "descripcion": "A continuación, compartimos las iniciativas que venimos desarrollando para sensibilizar y comunicar a la comunidad universitaria nuestro proceso de Autoevaluación Institucional, dando cumplimiento a lo encomendado por el Honorable Consejo Superior.",
+        "badge": "COMUNICACIÓN Y MEDIOS",
+        "titulo": "Entrevistas y Cobertura en Medios",
+        "descripcion": "Iniciativas audiovisuales y radiales de sensibilización desarrolladas durante el proceso de Autoevaluación Institucional.",
         "items": "[{\"tipo\":\"youtube\",\"id\":\"USB3P-5VUE8\",\"titulo\":\"ENTREVISTA AUTOEVALUACIÓN MARIO OLORIZ\"},{\"tipo\":\"youtube\",\"id\":\"9O8zoZAYmW8\",\"titulo\":\"ENTREVISTA AUTOEVALUACIÓN PATRICIA AZPARREN\"},{\"tipo\":\"facebook\",\"url\":\"https://www.facebook.com/100027364012969/posts/pfbid024rwDy6hKEvnJHRNwXJBAxX1JC4DnHnXXyYsfCP8bcK7NAe5h9F9eou8ThA7oe8idl\",\"plataforma\":\"Radio UNLu · Facebook\",\"titulo\":\"ENTREVISTA Nro 1 EN RADIO UNLu\"},{\"tipo\":\"soundcloud\",\"url\":\"https://soundcloud.com/radiounlu-647543511/patricia-azparren-y-walter-panessi\",\"titulo\":\"ENTREVISTA Nro 2 EN RADIO UNLu\"},{\"tipo\":\"soundcloud\",\"url\":\"https://soundcloud.com/radiounlu-647543511/patricia-azparren-1108\",\"titulo\":\"ENTREVISTA Nro 3 EN RADIO UNLu\"},{\"tipo\":\"facebook\",\"url\":\"https://m.facebook.com/story.php?story_fbid=pfbid0S4F7SiTjxpmRQDLJND3mJh8AyzSPyziYENDrXKzazHwAu9i5hPebVF3sP6QS7XiHl&id=100027364012969\",\"plataforma\":\"Publicación en Facebook\",\"titulo\":\"ENTREVISTA FLORENCIA CENDALLI\"},{\"tipo\":\"facebook\",\"url\":\"https://m.facebook.com/story.php?story_fbid=pfbid0S4F7SiTjxpmRQDLJND3mJh8AyzSPyziYENDrXKzazHwAu9i5hPebVF3sP6QS7XiHl&id=100027364012969\",\"plataforma\":\"Publicación en Facebook\",\"titulo\":\"ENTREVISTA GUILLERMO DELL'INMAGINE\"},{\"tipo\":\"link\",\"url\":\"http://www.prensa.unlu.edu.ar/?q=node/9085\",\"plataforma\":\"Nota de Prensa UNLu\",\"titulo\":\"PRENSA UNLu\"},{\"tipo\":\"link\",\"url\":\"http://www.prensa.unlu.edu.ar/?q=node/9011\",\"plataforma\":\"Presentación del Informe\",\"titulo\":\"PRESENTACIÓN INFORME - PRENSA UNLu\"},{\"tipo\":\"soundcloud\",\"url\":\"https://soundcloud.com/radiounlu-647543511/panessi-azparren-oloriz-1112\",\"titulo\":\"ÚLTIMA ENTREVISTA RADIO UNLu - PANESSI, OLORIZ, AZPARREN\"}]"
       }
     }
