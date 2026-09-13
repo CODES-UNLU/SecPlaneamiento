@@ -14,10 +14,10 @@ const { value, label, description, highlight = false } = Astro.props;
 ---
 
 <div class:list={[
-  "p-6 rounded-xl border transition-all duration-200",
+  "p-6 rounded-xl border",
   highlight 
-    ? "bg-unlu-green-dark text-white border-unlu-green-dark shadow-md" 
-    : "bg-white text-gray-800 border-gray-200 shadow-xs hover:border-unlu-green"
+    ? "bg-unlu-green-dark text-white border-unlu-green-dark shadow-xs" 
+    : "bg-white text-gray-800 border-gray-200 shadow-xs"
 ]}>
   <div class:list={[
     "text-3xl sm:text-4xl font-bold tracking-tight font-serif",
