@@ -9,23 +9,25 @@
   },
   "blocks": [
     {
+      "id": "pdi-banner-form-proyectos",
+      "type": "cta-banner",
+      "props": {
+        "etiqueta": "PARTICIPACIÓN Y CONVOCATORIA DE CLAUSTROS",
+        "titulo": "Formulario Oficial para la Presentación de Proyectos y Acciones de Desarrollo",
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLScrzzB-ymvYq5UZYKbfkJWwH7X0rivtEq3I7xyV9QzcJ763rQ/viewform?usp=header",
+        "textoBoton": "Cargar Proyecto Online ↗",
+        "estilo": "verde",
+        "tipoBoton": "boton"
+      }
+    },
+    {
       "id": "pdi-banner-propuesta",
       "type": "cta-banner",
       "props": {
         "etiqueta": "DOCUMENTO PRINCIPAL · PDI 2026–2036",
         "titulo": "Haga click aquí para acceder al Plan de Desarrollo Institucional (PDI) 2026-2036",
         "url": "/Propuesta-PDI-2026-2036.pdf",
-        "textoBoton": "Acceder al PDI"
-      }
-    },
-    {
-      "id": "pdi-banner-resolucion",
-      "type": "cta-banner",
-      "props": {
-        "etiqueta": "RESOLUCIÓN H. CONSEJO SUPERIOR RESHCS: 492/2026",
-        "titulo": "Haga click aquí para consultar la Resolución de Aprobación del PDI (RESHCS: 492/2026)",
-        "url": "/Res-PDI.pdf",
-        "textoBoton": "Ver Resolución",
+        "textoBoton": "Acceder al PDI",
         "estilo": "blanco"
       }
     },
@@ -48,7 +50,7 @@
           "id": "pdi-mision-vision-grid",
           "type": "texto-rico",
           "props": {
-            "contenido": "<div style=\"display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1rem;margin:1.25rem 0;\"><div style=\"background:#ffffff;border:1px solid #e2e8f0;border-top:3px solid #008541;border-radius:0.5rem;padding:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);\"><span style=\"font-size:0.6875rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:#008541;display:block;margin-bottom:0.25rem;\">MISIÓN INSTITUCIONAL</span><p style=\"font-size:0.8125rem;color:#374151;line-height:1.6;margin:0;\">Institución de educación superior pública, gratuita, autónoma y cogobernada que desarrolla actividades de docencia, investigación, extensión y vinculación orientadas al desarrollo integral de las personas y al fortalecimiento sostenible de la región y el país.</p></div><div style=\"background:#ffffff;border:1px solid #e2e8f0;border-top:3px solid #f9c540;border-radius:0.5rem;padding:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);\"><span style=\"font-size:0.6875rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:#b07d2c;display:block;margin-bottom:0.25rem;\">VISIÓN AL 2036</span><p style=\"font-size:0.8125rem;color:#374151;line-height:1.6;margin:0;\">Consolidarse hacia 2036 como una institución pública, inclusiva y territorialmente comprometida, que garantiza el derecho a la educación superior, produce conocimiento pertinente con impacto social y fortalece su presencia regional a través de una gestión democrática, transparente y sostenible.</p></div></div>"
+            "contenido": "<div style=\"display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1rem;margin:1.25rem 0;\"><div style=\"background:#ffffff;border:1px solid #e2e8f0;border-top:3px solid #008541;border-radius:0.5rem;padding:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);\"><span style=\"font-size:0.6875rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:#008541;display:block;margin-bottom:0.25rem;\">MISIÓN INSTITUCIONAL</span><p style=\"font-size:0.8125rem;color:#374151;line-height:1.6;margin:0;\">Institución de educación superior pública, gratuita, autónoma y cogobernada que desarrolla actividades de docencia, investigación, extensión y vinculación orientadas al desarrollo integral de las personas y al fortalecimiento sostenible de la región y el país (Estatuto UNLu, Res. A.U. N° 006/00).</p></div><div style=\"background:#ffffff;border:1px solid #e2e8f0;border-top:3px solid #f9c540;border-radius:0.5rem;padding:1.25rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);\"><span style=\"font-size:0.6875rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:#b07d2c;display:block;margin-bottom:0.25rem;\">VISIÓN AL 2036</span><p style=\"font-size:0.8125rem;color:#374151;line-height:1.6;margin:0;\">Consolidarse hacia 2036 como una institución pública, inclusiva y territorialmente comprometida, que garantiza el derecho a la educación superior, produce conocimiento pertinente con impacto social y fortalece su presencia regional a través de una gestión democrática, transparente y sostenible.</p></div></div>"
           }
         },
         {
@@ -72,14 +74,14 @@
           "id": "metodologia-etapas",
           "type": "texto-rico",
           "props": {
-            "contenido": "<p>La elaboración del PDI se rigió por la metodología en <strong>siete etapas</strong> aprobada por la <strong>Resolución RESHCS-LUJ: 0000202-24</strong>, garantizando un proceso abierto y transparente:</p><ol style=\"list-style:none;padding:0;margin:1rem 0;display:flex;flex-direction:column;gap:0.625rem;\"><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.6rem;height:1.6rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;\">1</span><div><strong>Autoevaluación Institucional:</strong> Concluida en 2023 con más de 6.000 encuestas a estudiantes, docentes, nodocentes y graduados.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.6rem;height:1.6rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;\">2</span><div><strong>Aprobación de Objetivos Estratégicos:</strong> Establecidos por el HCS mediante Resolución RESHCS 790/24.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.6rem;height:1.6rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;\">3</span><div><strong>Convocatoria Abierta:</strong> Convocatoria a toda la comunidad universitaria regulada por RESHCS 155/25.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.6rem;height:1.6rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;\">4</span><div><strong>Recepción de 137 Presentaciones:</strong> Iniciativas formuladas por todos los claustros y dependencias.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.6rem;height:1.6rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;\">5</span><div><strong>Análisis en Comisión Asesora Permanente:</strong> Evaluación detallada por la CAP de Planeamiento y Desarrollo.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.6rem;height:1.6rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;\">6</span><div><strong>Aprobación de Nómina de Proyectos:</strong> Aprobada por el HCS mediante Resolución RESHCS 482/25.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.6rem;height:1.6rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;\">7</span><div><strong>Aprobación Definitiva del PDI:</strong> Aprobación final y puesta en vigencia por Resolución RESHCS 492/2026.</div></li></ol>"
+            "contenido": "<p>La elaboración del PDI se rigió por la metodología en <strong>siete etapas</strong> aprobada por la <strong>Resolución RESHCS-LUJ: 0000202-24</strong>, garantizando un proceso abierto y transparente:</p><ol style=\"list-style:none;padding:0;margin:1rem 0;display:flex;flex-direction:column;gap:0.625rem;\"><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.6rem;height:1.6rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;\">1</span><div><strong>Autoevaluación Institucional:</strong> Concluida con más de 6.000 encuestas a estudiantes, docentes, nodocentes y graduados.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.6rem;height:1.6rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;\">2</span><div><strong>Aprobación de Objetivos Estratégicos:</strong> Establecidos por el HCS mediante <strong>Resolución RESHCS: 790/24</strong>.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.6rem;height:1.6rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;\">3</span><div><strong>Convocatoria Abierta:</strong> Convocatoria a toda la comunidad universitaria regulada por RESHCS 155/25 para carga digital de propuestas.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.6rem;height:1.6rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;\">4</span><div><strong>Recepción de 137 Presentaciones:</strong> Proyectos e iniciativas formuladas por claustros, departamentos y dependencias.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.6rem;height:1.6rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;\">5</span><div><strong>Análisis en Comisión Asesora Permanente:</strong> Evaluación detallada por la CAP de Planeamiento y Desarrollo Universitario e Informe Preliminar.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.6rem;height:1.6rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;\">6</span><div><strong>Aprobación de Nómina de Proyectos:</strong> Aprobada por el HCS mediante Resolución RESHCS 482/25.</div></li><li style=\"display:flex;align-items:flex-start;gap:0.75rem;\"><span style=\"width:1.6rem;height:1.6rem;border-radius:9999px;background:rgba(0,133,65,0.12);color:#008541;font-size:0.75rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;\">7</span><div><strong>Aprobación Definitiva del PDI:</strong> Aprobación final y puesta en vigencia por Resolución RESHCS 492/2026.</div></li></ol>"
           }
         },
         {
           "id": "diagnostico-foda",
           "type": "texto-rico",
           "props": {
-            "contenido": "<div style=\"display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1.25rem;margin:1.25rem 0;\"><div style=\"background:#f8fafc;border:1px solid #cbd5e1;border-top:3px solid #008541;border-radius:0.5rem;padding:1.25rem;\"><strong style=\"color:#008541;font-size:0.9375rem;display:block;margin-bottom:0.5rem;\">💪 Fortalezas Institucionales Destacadas</strong><ul style=\"list-style:disc;padding-left:1.25rem;font-size:0.8125rem;color:#4b5563;line-height:1.6;\"><li>Crecimiento de matrícula (+4,8% anual) superior a la media nacional (3,3%).</li><li>Vocación regional con 5 sedes activas que atienden un área de 3,5 millones de habitantes.</li><li>33% de docentes con posgrado (por encima del 20% promedio nacional).</li><li>Sistema de Educación a Distancia (SIED) validado por CONEAU.</li><li>Predio consolidado de 27.384 m² y Campo Experimental de 250 hectáreas.</li></ul></div><div style=\"background:#f8fafc;border:1px solid #cbd5e1;border-top:3px solid #c0392b;border-radius:0.5rem;padding:1.25rem;\"><strong style=\"color:#c0392b;font-size:0.9375rem;display:block;margin-bottom:0.5rem;\">⚠️ Desafíos y Problemáticas a Resolver</strong><ul style=\"list-style:disc;padding-left:1.25rem;font-size:0.8125rem;color:#4b5563;line-height:1.6;\"><li>Alta tasa de abandono temprano (48,7% en los dos primeros años).</li><li>Desvío promedio de más de 6 años sobre la duración teórica de carreras.</li><li>37% de cargos docentes interinos que requieren regularización por concurso.</li><li>Estatuto Universitario sin actualización integral desde el año 2000.</li><li>Concentración de posgrados y necesidad de modernizar laboratorios e infraestructura.</li></ul></div></div>"
+            "contenido": "<div style=\"display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1.25rem;margin:1.25rem 0;\"><div style=\"background:#f8fafc;border:1px solid #cbd5e1;border-top:3px solid #008541;border-radius:0.5rem;padding:1.25rem;\"><strong style=\"color:#008541;font-size:0.9375rem;display:block;margin-bottom:0.5rem;\">💪 Fortalezas Institucionales Destacadas</strong><ul style=\"list-style:disc;padding-left:1.25rem;font-size:0.8125rem;color:#4b5563;line-height:1.6;\"><li>Crecimiento de matrícula (+4,8% anual) superior a la media nacional (3,3%).</li><li>Vocación regional con sedes activas que atienden un área de 3,5 millones de habitantes.</li><li>33% de docentes con posgrado (por encima del 20% promedio nacional).</li><li>Sistema de Educación a Distancia (SIED) validado por CONEAU.</li><li>Predio consolidado de 27.384 m² y Campo Experimental de 250 hectáreas.</li></ul></div><div style=\"background:#f8fafc;border:1px solid #cbd5e1;border-top:3px solid #c0392b;border-radius:0.5rem;padding:1.25rem;\"><strong style=\"color:#c0392b;font-size:0.9375rem;display:block;margin-bottom:0.5rem;\">⚠️ Desafíos y Problemáticas a Resolver</strong><ul style=\"list-style:disc;padding-left:1.25rem;font-size:0.8125rem;color:#4b5563;line-height:1.6;\"><li>Alta tasa de abandono temprano (48,7% en los dos primeros años).</li><li>Desvío promedio de más de 6 años sobre la duración teórica de carreras.</li><li>37% de cargos docentes interinos que requieren regularización por concurso.</li><li>Estatuto Universitario sin actualización integral desde el año 2000.</li><li>Concentración de posgrados y necesidad de modernizar laboratorios e infraestructura.</li></ul></div></div>"
           }
         }
       ]
@@ -126,6 +128,53 @@
       ]
     },
     {
+      "id": "pdi-documentos-oficiales",
+      "type": "repositorio-documentos",
+      "props": {
+        "badge": "TRANSPARENCIA Y NORMATIVA OFICIAL",
+        "titulo": "Repositorio Documental del PDI 2026–2036",
+        "descripcion": "Accedé y descargá las resoluciones del H. Consejo Superior, documentos rectores y formularios de presentación vinculados al Plan de Desarrollo Institucional.",
+        "documentos": [
+          {
+            "titulo": "Propuesta Plan de Desarrollo Institucional 2026–2036",
+            "tipo": "Plan Estratégico",
+            "anio": "2026",
+            "tamanio": "PDF · 3.2 MB",
+            "url": "/Propuesta-PDI-2026-2036.pdf",
+            "destacado": true,
+            "resumen": "Documento rector integral con metas decenales, 6 dimensiones y 137 proyectos prioritarios."
+          },
+          {
+            "titulo": "Resolución RESHCS: 492/2026 (Aprobación Definitiva PDI)",
+            "tipo": "Resolución HCS",
+            "anio": "2026",
+            "tamanio": "PDF · 1.8 MB",
+            "url": "/Res-PDI.pdf",
+            "destacado": true,
+            "resumen": "Aprobación unánime del H. Consejo Superior y Anexo Único del Plan Decenal."
+          },
+          {
+            "titulo": "Resolución RESHCS: 790/2024 (Aprobación de Objetivos Estratégicos)",
+            "tipo": "Resolución HCS",
+            "anio": "2024",
+            "tamanio": "Normativa",
+            "url": "https://www.secplaneamiento.unlu.edu.ar/?q=node/24",
+            "destacado": false,
+            "resumen": "Fijación formal de los Objetivos Estratégicos y Específicos que dieron origen a las 6 dimensiones del PDI."
+          },
+          {
+            "titulo": "Formulario Digital de Presentación de Proyectos y Acciones",
+            "tipo": "Formulario",
+            "anio": "2025/2026",
+            "tamanio": "Google Forms",
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLScrzzB-ymvYq5UZYKbfkJWwH7X0rivtEq3I7xyV9QzcJ763rQ/viewform?usp=header",
+            "destacado": true,
+            "resumen": "Plataforma para que docentes, nodocentes, estudiantes y unidades académicas carguen propuestas de desarrollo."
+          }
+        ]
+      }
+    },
+    {
       "id": "metas-monitoreo",
       "type": "seccion-badge",
       "props": {
@@ -145,13 +194,6 @@
           "type": "texto-rico",
           "props": {
             "contenido": "<div style=\"display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1rem;margin:1.25rem 0;\"><div style=\"background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #b07d2c;border-radius:0.5rem;padding:1.25rem;\"><strong style=\"color:#b07d2c;font-size:0.9375rem;display:block;margin-bottom:0.35rem;\">💰 Fuentes de Financiamiento</strong><p style=\"font-size:0.8125rem;color:#4b5563;line-height:1.6;margin:0;\">El PDI se sustenta en el <strong>Tesoro Nacional (Fuente 11 ~92%)</strong>, complementado con programas competitivos de la SSPU, CONICET, CIC, <strong>Fondos Propios (Fuente 12 - CATEC y posgrados)</strong>, convenios internacionales y la creación proyectada de la <strong>Fundación UNLu</strong>.</p></div><div style=\"background:#f8fafc;border:1px solid #e2e8f0;border-left:4px solid #008541;border-radius:0.5rem;padding:1.25rem;\"><strong style=\"color:#008541;font-size:0.9375rem;display:block;margin-bottom:0.35rem;\">🛡️ Monitoreo SIAC y Transparencia</strong><p style=\"font-size:0.8125rem;color:#4b5563;line-height:1.6;margin:0;\">El seguimiento se efectúa de manera anual y bienal por la <strong>Comisión Asesora Permanente de Planeamiento</strong> en articulación con el <strong>Sistema Institucional de Aseguramiento de la Calidad (SIAC)</strong>, con informe anual a la Asamblea Universitaria y publicación en el <strong>Portal de Transparencia</strong>.</p></div></div>"
-          }
-        },
-        {
-          "id": "pdi-action-buttons",
-          "type": "texto-rico",
-          "props": {
-            "contenido": "<div style=\"display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.5rem;\"><a href=\"/Propuesta-PDI-2026-2036.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"display:inline-flex;align-items:center;gap:0.5rem;background-color:#008541;color:white;font-weight:700;font-size:0.875rem;padding:0.75rem 1.25rem;border-radius:0.5rem;text-decoration:none;box-shadow:0 2px 6px rgba(0,0,0,0.1);\">📄 Descargar Propuesta PDI 2026–2036 (PDF)</a><a href=\"/Res-PDI.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"display:inline-flex;align-items:center;gap:0.5rem;background-color:#ffffff;border:1px solid #cbd5e1;color:#008541;font-weight:700;font-size:0.875rem;padding:0.75rem 1.25rem;border-radius:0.5rem;text-decoration:none;box-shadow:0 1px 3px rgba(0,0,0,0.05);\">📜 Descargar Resolución RESHCS: 492/2026 (PDF)</a></div>"
           }
         }
       ]

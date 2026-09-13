@@ -23,6 +23,25 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   }
 
+  /* Accesibilidad: Respetar preferencia de reducción de movimiento */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto !important;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Accesibilidad: Indicador de foco visible de alto contraste */
+  :focus-visible {
+    outline: 2px solid #008541;
+    outline-offset: 2px;
+  }
+
   h1, h2, h3, .font-serif-unlu {
     font-family: Georgia, Cambria, "Times New Roman", Times, serif;
   }

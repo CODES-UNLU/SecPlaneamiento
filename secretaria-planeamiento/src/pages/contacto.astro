@@ -7,6 +7,7 @@
 import Layout from "../layouts/Layout.astro";
 import ContactForm from "../components/ContactForm.astro";
 import BlockRenderer from "../blocks/BlockRenderer.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 import pageData from "../data/pages/contacto.json";
 
 const { meta = {}, blocks = [] } = pageData;
@@ -14,6 +15,7 @@ const { meta = {}, blocks = [] } = pageData;
 
 <Layout 
   title="Contacto · Secretaría de Planeamiento UNLu" 
+  description={meta.heroSubtitle || "Horarios de atención, mesa de entradas, correo institucional y formulario de consulta de la Secretaría de Planeamiento de la UNLu."}
   activeSection="contacto"
 >
   <!-- ===== HERO: Cabecera verde con datos de contacto integrados ===== -->
@@ -26,18 +28,8 @@ const { meta = {}, blocks = [] } = pageData;
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       
-      <!-- Migas de Pan -->
-      <nav aria-label="Breadcrumb" class="pb-4">
-        <ol class="flex items-center space-x-1.5 text-xs text-white/60">
-          <li>
-            <a href="/" class="hover:text-white transition-colors">Inicio</a>
-          </li>
-          <li class="flex items-center space-x-1.5">
-            <span class="text-white/30">&gt;</span>
-            <span class="text-white font-medium" aria-current="page">Contacto</span>
-          </li>
-        </ol>
-      </nav>
+      <!-- Migas de Pan Accesibles -->
+      <Breadcrumbs items={[{ label: "Contacto" }]} />
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pb-8 items-center">
 

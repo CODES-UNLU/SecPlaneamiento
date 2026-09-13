@@ -1,37 +1,27 @@
 ---
 /**
  * Página: Autoevaluación Institucional
- *
- * Sistema de Bloques (Opción C): Esta página ya NO contiene HTML de contenido.
- * El contenido está en src/data/pages/autoevaluacion.json como un array de bloques.
- * BlockRenderer convierte esos bloques en HTML usando las funciones render() del
- * block-registry.js — garantizando que el Editor del Dashboard y esta página
- * muestren EXACTAMENTE el mismo resultado.
- *
- * Para editar el contenido: Dashboard Admin → Editor de Páginas → Autoevaluación
- * Para añadir un bloque nuevo: src/blocks/block-registry.js
+ * Contenido gestionado mediante sistema de bloques desacoplado (src/data/pages/autoevaluacion.json)
  */
 import Layout from "../layouts/Layout.astro";
 import BlockRenderer from "../blocks/BlockRenderer.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 import pageData from "../data/pages/autoevaluacion.json";
 
 const { meta, blocks } = pageData;
 ---
 
-<Layout title={meta.title} activeSection={meta.activeSection}>
+<Layout 
+  title={meta.title} 
+  description={meta.heroSubtitle || "Proceso de Autoevaluación Institucional de la Universidad Nacional de Luján."}
+  activeSection={meta.activeSection}
+>
 
-  <!-- Cabecera Hero (estructura fija de todas las páginas) -->
-  <section class="bg-linear-to-r from-unlu-green to-unlu-green-dark text-white py-12 lg:py-16">
+  <!-- Cabecera Hero Accesible -->
+  <section class="bg-gradient-to-r from-unlu-green to-unlu-green-dark text-white py-12 lg:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <nav aria-label="Breadcrumb" class="pb-6">
-        <ol class="flex items-center space-x-1.5 text-xs sm:text-sm text-white/70">
-          <li><a href="/" class="hover:text-white transition-colors">Inicio</a></li>
-          <li class="flex items-center space-x-1.5">
-            <span class="text-white/40">&gt;</span>
-            <span class="text-white font-medium" aria-current="page" data-hero-title>{meta.heroTitle}</span>
-          </li>
-        </ol>
-      </nav>
+      <Breadcrumbs items={[{ label: meta.heroTitle || "Autoevaluación Institucional" }]} />
+
       <span class="inline-block text-xs font-bold tracking-[0.15em] uppercase text-unlu-gold mb-3" data-hero-badge>
         {meta.heroBadge}
       </span>

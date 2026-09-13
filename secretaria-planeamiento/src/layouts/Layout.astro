@@ -1,7 +1,8 @@
 ---
 /**
  * Layout Principal del Portal
- * Integra la cabecera (Navbar), pie de página (Footer), metadatos SEO y configuración base.
+ * Integra la cabecera (Navbar), pie de página (Footer), metadatos SEO institucionales (Schema.org / Open Graph),
+ * utilidades de accesibilidad WCAG 2.1 AA (Skip link) y configuración base.
  */
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
@@ -11,18 +12,93 @@ import AdminBar from "../components/admin/AdminBar.astro";
 interface Props {
   title?: string;
   description?: string;
-  activeSection?: "la-secretaria" | "autoevaluacion" | "plan-desarrollo" | "contacto" | "";
+  activeSection?: "la-secretaria" | "autoevaluacion" | "plan-desarrollo" | "siac" | "contacto" | "";
+  image?: string;
+  ogType?: "website" | "article";
+  canonicalUrl?: string;
 }
 
 const {
-  title = "Secretaría de Planeamiento · UNLu",
-  description = "Autoevaluación institucional, planificación estratégica y desarrollo de la Universidad Nacional de Luján.",
-  activeSection = ""
+  title = "Secretaría de Planeamiento · Universidad Nacional de Luján",
+  description = "Portal oficial de la Secretaría de Planeamiento de la UNLu. Autoevaluación institucional, Plan de Desarrollo (PDI) 2026-2036, Sistema Institucional de Aseguramiento de la Calidad (SIAC) y normativas.",
+  activeSection = "",
+  image = "/hero-campus.jpg",
+  ogType = "website",
+  canonicalUrl = Astro.url.href
 } = Astro.props;
 
 const isAdminPage = Astro.url.pathname.startsWith("/admin");
----
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : "https://planeamiento.unlu.edu.ar";
+const absoluteImageUrl = image.startsWith("http") ? image : `${siteUrl}${image.startsWith("/") ? "" : "/"}${image}`;
 
+// Datos estructurados institucionales Schema.org (JSON-LD)
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://www.unlu.edu.ar/#organization",
+      "name": "Universidad Nacional de Luján",
+      "alternateName": "UNLu",
+      "url": "https://www.unlu.edu.ar",
+      "logo": `${siteUrl}/escudo.svg`,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Cruce Rutas 5 y 7",
+        "addressLocality": "Luján",
+        "addressRegion": "Buenos Aires",
+        "postalCode": "B6700",
+        "addressCountry": "AR"
+      },
+      "telephone": "+54-02323-445100"
+    },
+    {
+      "@type": "GovernmentOrganization",
+      "@id": `${siteUrl}/#department`,
+      "name": "Secretaría de Planeamiento - UNLu",
+      "url": siteUrl,
+      "parentOrganization": {
+        "@id": "https://www.unlu.edu.ar/#organization"
+      },
+      "description": description,
+      "email": "planeamiento@unlu.edu.ar",
+      "telephone": "+54-02323-445100",
+      "location": {
+        "@type": "Place",
+        "name": "Rectorado - Edificio 8, Sede Central UNLu",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Ruta 5 y Av. Constitución",
+          "addressLocality": "Luján",
+          "addressRegion": "Buenos Aires",
+          "addressCountry": "AR"
+        }
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      "url": siteUrl,
+      "name": "Secretaría de Planeamiento · UNLu",
+      "publisher": {
+        "@id": `${siteUrl}/#department`
+      },
+      "inLanguage": "es-AR"
+    },
+    {
+      "@type": "WebPage",
+      "@id": Astro.url.href,
+      "url": Astro.url.href,
+      "name": title,
+      "description": description,
+      "isPartOf": {
+        "@id": `${siteUrl}/#website`
+      },
+      "inLanguage": "es-AR"
+    }
+  ]
+};
+---
 
 <!doctype html>
 <html lang="es" class="scroll-smooth">
@@ -32,11 +108,30 @@ const isAdminPage = Astro.url.pathname.startsWith("/admin");
     <link rel="icon" type="image/svg+xml" href="/escudo.svg" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="author" content="Universidad Nacional de Luján · Secretaría de Planeamiento" />
+    <meta name="theme-color" content="#008541" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalUrl} />
 
     <!-- Open Graph / Redes Sociales -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content="Secretaría de Planeamiento · UNLu" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:url" content={Astro.url.href} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:image" content={absoluteImageUrl} />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={absoluteImageUrl} />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
     <!-- Prevenir auto-scroll indeseado al recargar en iOS Safari / WebKit -->
     <script is:inline>
@@ -47,19 +142,26 @@ const isAdminPage = Astro.url.pathname.startsWith("/admin");
     </script>
   </head>
   <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased selection:bg-emerald-800 selection:text-white">
+    <!-- Accesibilidad WCAG: Enlace para saltar al contenido principal -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[9999] focus:bg-[#008541] focus:text-white focus:px-4 focus:py-2.5 focus:rounded-lg focus:shadow-2xl focus:ring-2 focus:ring-[#f9c540] focus:outline-none font-bold text-sm tracking-wide transition-all"
+    >
+      Saltar al contenido principal (Skip to content)
+    </a>
+
     <!-- Barra flotante de administración (solo en vistas públicas) -->
     {!isAdminPage && <AdminBar currentPageTitle={title} currentPageId={activeSection} />}
 
     <!-- Barra de navegación superior -->
     <Navbar activeSection={activeSection} />
 
-    <!-- Contenido principal inyectado -->
-    <main class="flex-1">
+    <!-- Contenido principal inyectado con ancla accesible -->
+    <main id="main-content" tabindex="-1" class="flex-1 focus:outline-none">
       <slot />
     </main>
 
     <!-- Pie de página institucional -->
     {!isAdminPage && <Footer />}
   </body>
-
 </html>

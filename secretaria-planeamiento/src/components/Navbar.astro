@@ -1,10 +1,9 @@
 ---
 /**
  * Componente: Navbar Institucional (2 niveles)
- * Nivel 1: Barra blanca con logo UNLu (escudo), título y buscador.
- * Línea divisoria roja (color institucional).
- * Nivel 2: Barra verde institucional con links de navegación y dropdowns.
- * Línea divisoria dorada al final.
+ * Nivel 1: Barra blanca con logo UNLu (escudo), título y buscador accesible con atajo de teclado.
+ * Línea divisoria tricolor institucional.
+ * Nivel 2: Barra verde institucional con links de navegación accesibles por teclado (focus-within) y dropdowns.
  */
 interface Props {
   activeSection?: string;
@@ -21,6 +20,7 @@ const navLinks = [
     subItems: [
       { name: "Misión, Visión y Valores", href: "/la-secretaria#mision" },
       { name: "Autoridades y equipo", href: "/la-secretaria#autoridades" },
+      { name: "Los ODS y UNLu Sostenible", href: "/la-secretaria#ods-sostenible" },
       { name: "Actividades", href: "/la-secretaria#actividades" },
     ],
   },
@@ -45,6 +45,8 @@ const navLinks = [
       { name: "Metodología y Diagnóstico", href: "/plan-desarrollo#metodologia-diagnostico" },
       { name: "6 Dimensiones Estratégicas", href: "/plan-desarrollo#dimensiones" },
       { name: "Beneficios por Claustro", href: "/plan-desarrollo#beneficios-claustros" },
+      { name: "Presentación de Proyectos", href: "/plan-desarrollo#pdi-banner-form-proyectos" },
+      { name: "Repositorio y Normativa", href: "/plan-desarrollo#pdi-documentos-oficiales" },
       { name: "Metas al 2036 y SIAC", href: "/plan-desarrollo#metas-monitoreo" },
     ],
   },
@@ -75,18 +77,18 @@ const navLinks = [
 ---
 
 <header class="sticky top-0 z-50 shadow-md">
-  <!-- Barra superior institucional negra (solo visible en pantallas medianas/grandes) -->
-  <div class="hidden md:block bg-black text-white text-xs py-1.5 border-b border-gray-800">
+  <!-- Barra superior institucional negra (accesos rápidos UNLu) -->
+  <div class="hidden md:block bg-black text-white text-xs py-1.5 border-b border-gray-800" aria-label="Enlaces institucionales directos">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
       <div class="flex items-center gap-6">
-        <a href="https://www.unlu.edu.ar/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors">Portal UNLu</a>
-        <a href="https://rectorado.unlu.edu.ar/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors">Rectorado</a>
+        <a href="https://www.unlu.edu.ar/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors focus:underline focus:outline-none">Portal UNLu</a>
+        <a href="https://rectorado.unlu.edu.ar/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors focus:underline focus:outline-none">Rectorado</a>
       </div>
       <div class="flex items-center gap-6">
-        <a href="https://webmail.unlu.edu.ar/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors">Webmail</a>
-        <a href="https://www.unlu.edu.ar/acceso-aulas-virtuales.html" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors">Aulas Virtuales</a>
-        <a href="https://www.biblioteca.unlu.edu.ar/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors">Biblioteca</a>
-        <a href="/admin" id="nav-admin-link" class="text-unlu-gold font-bold hover:underline flex items-center gap-1 bg-unlu-green/20 px-2 py-0.5 rounded border border-unlu-gold/30">
+        <a href="https://webmail.unlu.edu.ar/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors focus:underline focus:outline-none">Webmail</a>
+        <a href="https://www.unlu.edu.ar/acceso-aulas-virtuales.html" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors focus:underline focus:outline-none">Aulas Virtuales</a>
+        <a href="https://www.biblioteca.unlu.edu.ar/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors focus:underline focus:outline-none">Biblioteca</a>
+        <a href="/admin" id="nav-admin-link" class="text-unlu-gold font-bold hover:underline flex items-center gap-1 bg-unlu-green/20 px-2 py-0.5 rounded border border-unlu-gold/30 focus:ring-2 focus:ring-unlu-gold">
           <span>🔑 Iniciar Sesión</span>
         </a>
       </div>
@@ -99,12 +101,12 @@ const navLinks = [
       <div class="flex items-center justify-between h-20">
         
         <!-- Logo + Título -->
-        <a href="/" class="flex items-center gap-3 group">
+        <a href="/" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-unlu-green rounded-lg p-1" aria-label="Página de inicio - Secretaría de Planeamiento UNLu">
           <img 
             src="/escudo.svg" 
-            alt="Escudo UNLu" 
+            alt="Escudo oficial de la Universidad Nacional de Luján" 
             class="w-12 h-12 rounded-full border-2 border-unlu-gold/30 shadow-sm"
-         />
+          />
           <div class="flex flex-col">
             <span class="text-lg sm:text-xl font-bold tracking-tight text-gray-900 font-sans">Secretaría de Planeamiento</span>
             <span class="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.15em] text-gray-500">Universidad Nacional de Luján · Rectorado</span>
@@ -113,29 +115,36 @@ const navLinks = [
 
         <!-- Buscador con resultados instantáneos (desktop) -->
         <div class="hidden md:flex items-center relative" id="nav-search-container">
-          <form id="nav-search-form" class="flex items-center rounded-lg overflow-hidden shadow-xs border border-gray-300 focus-within:border-unlu-green focus-within:ring-2 focus-within:ring-unlu-green/20 transition-all bg-gray-100" role="search">
+          <form id="nav-search-form" class="flex items-center rounded-lg overflow-hidden shadow-xs border border-gray-300 focus-within:border-unlu-green focus-within:ring-2 focus-within:ring-unlu-green/20 transition-all bg-gray-100" role="search" aria-label="Buscador del portal">
             <div class="relative flex items-center">
               <input
                 type="search"
                 id="nav-search-input"
                 placeholder="Buscar en el portal..."
                 autocomplete="off"
+                aria-label="Buscar en el portal institucional"
+                aria-autocomplete="list"
+                aria-controls="nav-search-results"
                 class="px-3.5 py-2 text-sm text-gray-800 placeholder:text-gray-400 bg-transparent focus:outline-none w-44 lg:w-64 transition-all"
               />
+              <kbd class="hidden lg:inline-flex items-center gap-0.5 text-[10px] font-semibold text-gray-400 bg-white border border-gray-200 px-1.5 py-0.5 rounded shadow-xs mr-2 pointer-events-none" title="Atajo de teclado">
+                Ctrl K
+              </kbd>
               <button
                 type="button"
                 id="nav-search-clear"
                 class="hidden text-gray-400 hover:text-gray-600 px-1.5 py-1 text-xs"
                 title="Limpiar búsqueda"
+                aria-label="Limpiar campo de búsqueda"
               >✕</button>
             </div>
             <button
               type="submit"
               id="nav-search-submit"
-              class="bg-unlu-green hover:bg-unlu-green-dark text-white px-3 py-[9px] transition-colors duration-200 shrink-0 cursor-pointer"
-              aria-label="Buscar"
+              class="bg-unlu-green hover:bg-unlu-green-dark text-white px-3 py-[9px] transition-colors duration-200 shrink-0 cursor-pointer focus:outline-none focus:ring-2 focus:ring-unlu-gold"
+              aria-label="Ejecutar búsqueda"
             >
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </button>
@@ -144,6 +153,8 @@ const navLinks = [
           <!-- Dropdown flotante de resultados en vivo (desktop) -->
           <div
             id="nav-search-results"
+            role="region"
+            aria-live="polite"
             class="hidden absolute right-0 top-full mt-2 w-96 max-h-96 overflow-y-auto bg-white rounded-xl shadow-2xl border border-gray-200 divide-y divide-gray-100 z-50 transition-all"
           >
             <!-- Renderizado dinámico vía JS -->
@@ -154,15 +165,15 @@ const navLinks = [
         <button
           id="mobile-menu-button"
           type="button"
-          class="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-700 hover:bg-gray-100 focus:outline-hidden focus:ring-2 focus:ring-unlu-green"
+          class="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-unlu-green"
           aria-controls="mobile-menu"
           aria-expanded="false"
-          aria-label="Abrir menú"
+          aria-label="Abrir menú de navegación"
         >
-          <svg class="h-6 w-6 block" id="menu-icon-open" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <svg class="h-6 w-6 block" id="menu-icon-open" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
-          <svg class="h-6 w-6 hidden" id="menu-icon-close" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <svg class="h-6 w-6 hidden" id="menu-icon-close" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
@@ -170,25 +181,27 @@ const navLinks = [
     </div>
   </div>
 
-  <!-- Línea divisoria tricolor de 3px (Verde, Amarillo y Rojo) -->
-  <div class="flex h-[3px] w-full">
+  <!-- Línea divisoria tricolor institucional de 3px -->
+  <div class="flex h-[3px] w-full" aria-hidden="true">
     <div class="h-full bg-unlu-green w-[33.33%]"></div>
     <div class="h-full bg-unlu-gold w-[33.34%]"></div>
     <div class="h-full bg-unlu-red w-[33.33%]"></div>
   </div>
 
-  <!-- Nivel 2: Barra verde con navegación -->
+  <!-- Nivel 2: Barra verde con navegación accesible -->
   <nav class="hidden md:block bg-unlu-green-dark" aria-label="Navegación principal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center h-12">
         {navLinks.map((link) => {
           const isActive = activeSection === link.id;
           return (
-            <div class="relative group">
+            <div class="relative group focus-within:z-50">
               <a
                 href={link.href}
+                aria-haspopup={link.hasDropdown ? "true" : undefined}
+                aria-current={isActive ? "page" : undefined}
                 class:list={[
-                  "inline-flex items-center gap-1.5 px-4 text-sm font-medium transition-colors border-b-2",
+                  "inline-flex items-center gap-1.5 px-4 text-sm font-medium transition-colors border-b-2 focus:outline-none focus:ring-2 focus:ring-unlu-gold focus:ring-inset",
                   isActive
                     ? "text-unlu-gold bg-unlu-green border-unlu-gold font-bold pt-3 pb-3.5"
                     : "text-white hover:text-unlu-gold hover:bg-unlu-green border-transparent pt-3.5 pb-3.5"
@@ -196,20 +209,20 @@ const navLinks = [
               >
                 {link.name}
                 {link.hasDropdown && (
-                  <svg class="w-3.5 h-3.5 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg class="w-3.5 h-3.5 opacity-80 group-hover:rotate-180 group-focus-within:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
                   </svg>
                 )}
               </a>
 
-              {/* Dropdown en hover */}
+              {/* Dropdown accesible tanto en hover como en foco con teclado (focus-within) */}
               {link.hasDropdown && link.subItems.length > 0 && (
-                <div class="absolute left-0 top-full w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
-                  <div class="bg-white shadow-lg border border-gray-200 py-1.5">
+                <div class="absolute left-0 top-full w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-150 z-50">
+                  <div class="bg-white shadow-xl border border-gray-200 py-1.5 rounded-b-lg">
                     {link.subItems.map((sub) => (
                       <a
                         href={sub.href}
-                        class="block px-4 py-2.5 text-sm text-gray-750 hover:bg-unlu-green/5 hover:text-unlu-green transition-colors"
+                        class="block px-4 py-2.5 text-sm text-gray-800 hover:bg-unlu-green/10 hover:text-unlu-green focus:bg-unlu-green/15 focus:text-unlu-green focus:outline-none font-medium transition-colors"
                       >
                         {sub.name}
                       </a>
@@ -224,10 +237,13 @@ const navLinks = [
     </div>
   </nav>
 
-  <!-- Panel Menú Mobile: Backdrop con blur + Panel lateral hasta abajo -->
+  <!-- Panel Menú Mobile: Drawer accesible -->
   <div
     class="fixed inset-x-0 bottom-0 top-[83px] z-40 hidden md:hidden"
     id="mobile-menu"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Menú de navegación móvil"
   >
     <!-- Fondo oscuro con efecto blur -->
     <div
@@ -235,7 +251,7 @@ const navLinks = [
       id="mobile-menu-backdrop"
     ></div>
 
-    <!-- Panel lateral derecho: ocupa hasta abajo del todo, deja espacio a la izquierda con línea divisoria -->
+    <!-- Panel lateral derecho -->
     <div class="absolute top-0 right-0 bottom-0 w-[85%] max-w-sm bg-white border-l border-gray-200 shadow-2xl overflow-y-auto">
       
       <!-- Buscador Mobile -->
@@ -244,12 +260,13 @@ const navLinks = [
           <input
             type="search"
             id="mobile-search-input"
-            placeholder="Buscar SIAC, PDI, carreras..."
+            placeholder="Buscar SIAC, PDI, resoluciones..."
             autocomplete="off"
+            aria-label="Buscar en el portal (móvil)"
             class="w-full px-3.5 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 bg-transparent focus:outline-none"
           />
           <button type="button" id="mobile-search-submit" class="px-3 py-2.5 text-unlu-green hover:bg-unlu-green/5" aria-label="Buscar">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </button>
@@ -266,7 +283,7 @@ const navLinks = [
             <a
               href={link.href}
               class:list={[
-                "block px-3 py-2.5 text-base font-semibold rounded-md",
+                "block px-3 py-2.5 text-base font-semibold rounded-md focus:outline-none focus:ring-2 focus:ring-unlu-green",
                 activeSection === link.id
                   ? "text-unlu-green bg-unlu-green/5"
                   : "text-gray-800 hover:text-unlu-green hover:bg-gray-50"
@@ -279,7 +296,7 @@ const navLinks = [
                 {link.subItems.map((sub) => (
                   <a
                     href={sub.href}
-                    class="block px-3 py-1.5 text-sm text-gray-600 hover:text-unlu-green rounded-md"
+                    class="block px-3 py-1.5 text-sm text-gray-600 hover:text-unlu-green rounded-md focus:outline-none focus:ring-2 focus:ring-unlu-green"
                   >
                     {sub.name}
                   </a>
@@ -564,20 +581,37 @@ const navLinks = [
       snippet: "Propósito, objetivos institucionales y valores de la Secretaría de Planeamiento de la UNLu."
     },
     {
-      title: "Autoridades y Equipo de Trabajo",
+      title: "Formulario de Carga de Proyectos y Acciones PDI",
+      category: "PDI",
+      badgeColor: "bg-blue-100 text-blue-800 border-blue-300",
+      url: "https://docs.google.com/forms/d/e/1FAIpQLScrzzB-ymvYq5UZYKbfkJWwH7X0rivtEq3I7xyV9QzcJ763rQ/viewform?usp=header",
+      isExternal: true,
+      keywords: ["formulario proyectos", "presentar proyecto", "cargar accion", "convocatoria pdi", "google forms", "hcs", "proyectos de desarrollo"],
+      snippet: "Plataforma digital para la carga y presentación de Proyectos y Acciones de Desarrollo de claustros y dependencias."
+    },
+    {
+      title: "Los ODS y el Proyecto 'UNLu Sostenible'",
+      category: "La Secretaría",
+      badgeColor: "bg-purple-100 text-purple-800 border-purple-300",
+      url: "/la-secretaria#ods-sostenible",
+      keywords: ["ods", "agenda 2030", "unlu sostenible", "spu", "adriana martinez", "adriana rosenfeld", "sostenibilidad", "naciones unidas", "videos ods"],
+      snippet: "Proyecto UNLu Sostenible aprobado por la SPU, capacitación en Agenda 2030 y videos formativos de especialistas UNLu."
+    },
+    {
+      title: "Autoridades: Prof. María Ester Leguizamón",
       category: "La Secretaría",
       badgeColor: "bg-purple-100 text-purple-800 border-purple-300",
       url: "/la-secretaria#autoridades",
-      keywords: ["autoridades", "equipo", "secretaria", "direccion de evaluacion", "direccion de planeamiento", "quienes somos"],
-      snippet: "Estructura organizativa y autoridades de la Secretaría de Planeamiento."
+      keywords: ["autoridades", "maria ester leguizamon", "secretaria", "equipo", "interno 1718", "interno 1200", "despacho"],
+      snippet: "Prof. María Ester Leguizamón (Secretaria de Planeamiento) · Tel: (02323) 445100 Int. 1718 / 1200."
     },
     {
-      title: "Actividades y Funciones",
-      category: "La Secretaría",
-      badgeColor: "bg-purple-100 text-purple-800 border-purple-300",
-      url: "/la-secretaria#actividades",
-      keywords: ["actividades", "funciones", "coordinacion", "estadisticas", "indicadores", "capacitacion"],
-      snippet: "Líneas de trabajo, coordinación institucional y generación de información estratégica."
+      title: "Resolución RESHCS: 790/2024 (Objetivos Estratégicos PDI)",
+      category: "PDI",
+      badgeColor: "bg-blue-100 text-blue-800 border-blue-300",
+      url: "/plan-desarrollo#pdi-documentos-oficiales",
+      keywords: ["resolucion 790/2024", "reshcs 790/24", "objetivos estrategicos", "marco normativo pdi"],
+      snippet: "Fijación y aprobación por el H. Consejo Superior de los Objetivos Estratégicos y Específicos del PDI."
     },
 
     // --- CONTACTO ---
@@ -673,7 +707,7 @@ const navLinks = [
       containerEl.innerHTML = `
         <div class="p-4 text-center text-xs text-gray-500">
           <p class="font-bold text-gray-700 mb-1">No se encontraron resultados para "${query}"</p>
-          <p class="text-[11px] text-gray-400">Intenta buscando: <span class="font-semibold text-unlu-green">SIAC, PDI, tutorías, encuestas, autoridades</span></p>
+          <p class="text-[11px] text-gray-400">Intenta buscando: <span class="font-semibold text-unlu-green">SIAC, PDI, tutorías, encuestas, resoluciones</span></p>
         </div>
       `;
       return;
@@ -769,13 +803,12 @@ const navLinks = [
       }
     });
 
-    // Atajo de teclado Escape para cerrar
+    // Atajos de teclado: Escape para cerrar, Ctrl+K o '/' para enfocar buscador
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && searchResults) {
         searchResults.classList.add('hidden');
       }
-      // Atajo Ctrl+K o '/' para enfocar buscador
-      if ((e.ctrlKey && e.key === 'k') || (e.key === '/' && document.activeElement !== searchInput)) {
+      if ((e.ctrlKey && e.key === 'k') || (e.key === '/' && document.activeElement !== searchInput && !(e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement))) {
         e.preventDefault();
         searchInput.focus();
       }

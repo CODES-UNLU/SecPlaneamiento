@@ -6,7 +6,8 @@
  *      un editor rico estilo Word/CKEditor donde la persona escribe texto,
  *      negritas, listas, subtítulos y enlaces de manera natural.
  *   2. Bloques Prehechos: Componentes institucionales listos para usar
- *      (Banner verde de documento, Grilla de entrevistas/medios, Tarjeta de enlace).
+ *      (Banner verde de documento, Grilla de medios, Tarjeta de enlace, Repositorio de Documentos,
+ *       Indicadores de Transparencia, Línea de Tiempo de Gestión).
  *
  * COLOR DORADO INSTITUCIONAL: #f9c540 (claro/brillante)
  * COLOR DORADO OSCURO:        #b07d2c (texto sobre fondo claro)
@@ -132,6 +133,9 @@ export const BLOCK_REGISTRY = [
         <h3 style="font-size:1.25rem;font-weight:700;color:white;font-family:Georgia,serif;margin:0;line-height:1.3;">${titulo}</h3>
       </div>
     </div>
+    <span style="display:inline-flex;align-items:center;gap:0.375rem;padding:0.75rem 1.25rem;border-radius:0.5rem;font-weight:700;font-size:0.875rem;background-color:#f9c540;color:#1a1a1a;white-space:nowrap;flex-shrink:0;">
+      ${p.textoBoton || 'Acceder'}
+      <svg style="width:1rem;height:1rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
     </span>
   </div>
 </a>`;
@@ -139,7 +143,7 @@ export const BLOCK_REGISTRY = [
   },
 
   // ─────────────────────────────────────────────
-  // BLOQUE PREHECHO 2: Sección de Contenido Institucional (Tarjeta Blanca con editor estilo Word)
+  // BLOQUE PREHECHO 2: Sección de Contenido Institucional
   // ─────────────────────────────────────────────
   {
     id: "seccion-badge",
@@ -171,7 +175,210 @@ export const BLOCK_REGISTRY = [
   },
 
   // ─────────────────────────────────────────────
-  // BLOQUE PREHECHO 3: Grilla de Medios (Videos, Audios, Noticias)
+  // BLOQUE PREHECHO: Repositorio de Documentos y Resoluciones (Transparencia Activa)
+  // ─────────────────────────────────────────────
+  {
+    id: "repositorio-documentos",
+    name: "Repositorio Documental",
+    category: "prehechos",
+    icon: "📚",
+    description: "Listado estructurado de documentos, resoluciones e informes institucionales con metadatos y descarga directa.",
+    fields: [
+      { key: "badge",       label: "Etiqueta superior",     type: "text", default: "TRANSPARENCIA Y NORMATIVA" },
+      { key: "titulo",      label: "Título del Repositorio",type: "text", default: "Documentos Oficiales y Resoluciones" },
+      { key: "descripcion", label: "Descripción",           type: "textarea", default: "Repositorio institucional de resoluciones del H. Consejo Superior, informes de autoevaluación y planes estratégicos disponibles para descarga pública." },
+      { key: "documentos",  label: "Documentos (JSON)",     type: "textarea", placeholder: '[{"titulo":"Propuesta PDI 2026-2036","tipo":"Plan Estratégico","anio":"2026","tamanio":"PDF · 3.4 MB","url":"/Propuesta-PDI-2026-2036.pdf","destacado":true}]' }
+    ],
+    render(p) {
+      let docs = [];
+      try {
+        docs = typeof p.documentos === 'string' ? JSON.parse(p.documentos || '[]') : (p.documentos || []);
+      } catch(e) {
+        docs = [];
+      }
+
+      if (!Array.isArray(docs) || docs.length === 0) {
+        docs = [
+          { titulo: "Propuesta Plan de Desarrollo Institucional 2026–2036", tipo: "Plan Estratégico", anio: "2026", tamanio: "PDF · 3.2 MB", url: "/Propuesta-PDI-2026-2036.pdf", destacado: true, resumen: "Documento rector integral con metas decenales, 6 dimensiones y 137 proyectos prioritarios." },
+          { titulo: "Resolución RESHCS: 492/2026 (Aprobación PDI)", tipo: "Resolución HCS", anio: "2026", tamanio: "PDF · 1.8 MB", url: "/Res-PDI.pdf", destacado: true, resumen: "Aprobación unánime del Honorable Consejo Superior y Anexo Único del Plan 2026-2036." },
+          { titulo: "Resolución RESHCS: 890/2025 (Creación del SIAC-UNLu)", tipo: "Resolución HCS", anio: "2025", tamanio: "PDF · 1.2 MB", url: "/RESO-SIAC.pdf", destacado: false, resumen: "Marco normativo y gobernanza del Sistema Institucional de Aseguramiento de la Calidad." }
+        ];
+      }
+
+      const rows = docs.map(d => {
+        const isHighlight = d.destacado ? 'border-left:4px solid #008541;' : 'border-left:4px solid #cbd5e1;';
+        const typeBg = d.tipo === 'Resolución HCS' ? 'background:#fee2e2;color:#991b1b;border:1px solid #fecaca;' : 'background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0;';
+        return `<div style="background:#ffffff;border:1px solid #e2e8f0;${isHighlight}border-radius:0.75rem;padding:1.25rem 1.5rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.25rem;transition:box-shadow 0.2s;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+  <div style="flex:1;min-width:260px;">
+    <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.35rem;flex-wrap:wrap;">
+      <span style="font-size:0.6875rem;font-weight:700;text-transform:uppercase;padding:0.15rem 0.6rem;border-radius:9999px;${typeBg}">${d.tipo || 'Documento'}</span>
+      ${d.anio ? `<span style="font-size:0.75rem;color:#64748b;font-weight:600;">Año ${d.anio}</span>` : ''}
+      ${d.tamanio ? `<span style="font-size:0.75rem;color:#64748b;">· ${d.tamanio}</span>` : ''}
+    </div>
+    <h3 style="font-size:1.0625rem;font-weight:700;color:#0f172a;font-family:Georgia,serif;margin:0 0 0.35rem;line-height:1.35;">${d.titulo || ''}</h3>
+    ${d.resumen ? `<p style="font-size:0.8125rem;color:#475569;margin:0;line-height:1.5;">${d.resumen}</p>` : ''}
+  </div>
+  <div style="display:flex;align-items:center;gap:0.75rem;flex-shrink:0;">
+    <a href="${d.url || '#'}" target="_blank" rel="noopener noreferrer" aria-label="Descargar ${d.titulo || 'documento'}" style="display:inline-flex;align-items:center;gap:0.5rem;background-color:#008541;color:#ffffff;font-size:0.8125rem;font-weight:700;padding:0.625rem 1.125rem;border-radius:0.5rem;text-decoration:none;box-shadow:0 1px 2px rgba(0,0,0,0.08);">
+      <svg style="width:1rem;height:1rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+      <span>Descargar PDF</span>
+    </a>
+  </div>
+</div>`;
+      }).join('');
+
+      return `<section style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:1rem;padding:2rem 2.25rem;margin-bottom:2.5rem;box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+  <div style="margin-bottom:1.5rem;">
+    <span style="display:inline-block;font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#b07d2c;margin-bottom:0.25rem;">${p.badge || 'TRANSPARENCIA Y NORMATIVA'}</span>
+    <h2 style="font-size:1.5rem;font-weight:700;color:#111827;font-family:Georgia,serif;margin:0 0 0.5rem;">${p.titulo || 'Documentos Oficiales'}</h2>
+    <div style="height:3px;background:linear-gradient(to right,#008541,#f9c540,#c0392b);width:9rem;margin-bottom:0.75rem;"></div>
+    ${p.descripcion ? `<p style="color:#4b5563;font-size:0.875rem;line-height:1.6;margin:0;">${p.descripcion}</p>` : ''}
+  </div>
+  <div style="display:flex;flex-direction:column;gap:1rem;">
+    ${rows}
+  </div>
+</section>`;
+    }
+  },
+
+  // ─────────────────────────────────────────────
+  // BLOQUE PREHECHO: Indicadores y Métricas Institucionales (Dashboard de Gestión)
+  // ─────────────────────────────────────────────
+  {
+    id: "indicadores-metricas",
+    name: "Indicadores y Métricas",
+    category: "prehechos",
+    icon: "📊",
+    description: "Panel de indicadores cuantitativos con metas, avances y porcentajes institucionales.",
+    fields: [
+      { key: "badge",       label: "Etiqueta superior",     type: "text", default: "INDICADORES CLAVE" },
+      { key: "titulo",      label: "Título del Panel",      type: "text", default: "Métricas y Metas de Planificación" },
+      { key: "descripcion", label: "Descripción",           type: "textarea", default: "Seguimiento cuantitativo de las metas estratégicas de la Universidad Nacional de Luján." },
+      { key: "items",       label: "Indicadores (JSON)",    type: "textarea", placeholder: '[{"valor":"85%","etiqueta":"Planta Docente Ordinaria","meta":"Meta al 2036: 85%","progreso":65}]' }
+    ],
+    render(p) {
+      let items = [];
+      try {
+        items = typeof p.items === 'string' ? JSON.parse(p.items || '[]') : (p.items || []);
+      } catch(e) {
+        items = [];
+      }
+
+      if (!Array.isArray(items) || items.length === 0) {
+        items = [
+          { valor: "85%", etiqueta: "Cargos Docentes Concursados", meta: "Meta 2036: 85%", progreso: 70, claustro: "Docentes" },
+          { valor: "35%", etiqueta: "Tasa de Abandono de Grado", meta: "Reducción del 48,7% al 35%", progreso: 60, claustro: "Estudiantes" },
+          { valor: "+50%", etiqueta: "Publicaciones Científicas", meta: "Indexadas Scopus/WoS", progreso: 50, claustro: "Investigación" },
+          { valor: "100%", etiqueta: "Expedientes Digitales (SUDOCU)", meta: "Implementación plena", progreso: 90, claustro: "Gestión" }
+        ];
+      }
+
+      const cards = items.map(it => {
+        const prog = typeof it.progreso === 'number' ? it.progreso : 50;
+        return `<div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:0.75rem;padding:1.5rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);display:flex;flex-direction:column;justify-content:space-between;">
+  <div>
+    ${it.claustro ? `<span style="display:inline-block;font-size:0.625rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#008541;background:#ecfdf5;padding:0.2rem 0.5rem;border-radius:9999px;margin-bottom:0.5rem;">${it.claustro}</span>` : ''}
+    <div style="font-size:2rem;font-weight:800;color:#008541;font-family:Georgia,serif;line-height:1;margin-bottom:0.25rem;">${it.valor || '0'}</div>
+    <h3 style="font-size:0.9375rem;font-weight:700;color:#1e293b;margin:0 0 0.5rem;">${it.etiqueta || ''}</h3>
+  </div>
+  <div style="margin-top:1rem;">
+    <div style="height:6px;background:#e2e8f0;border-radius:9999px;overflow:hidden;margin-bottom:0.4rem;">
+      <div style="height:100%;background:linear-gradient(to right,#008541,#f9c540);width:${prog}%;border-radius:9999px;"></div>
+    </div>
+    <span style="font-size:0.75rem;font-weight:600;color:#64748b;">${it.meta || ''}</span>
+  </div>
+</div>`;
+      }).join('');
+
+      return `<section style="background:#ffffff;border:1px solid #e2e8f0;border-radius:1rem;padding:2rem 2.25rem;margin-bottom:2.5rem;box-shadow:0 1px 3px rgba(0,0,0,0.05);">
+  <div style="margin-bottom:1.5rem;">
+    <span style="display:inline-block;font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#b07d2c;margin-bottom:0.25rem;">${p.badge || 'INDICADORES'}</span>
+    <h2 style="font-size:1.5rem;font-weight:700;color:#111827;font-family:Georgia,serif;margin:0 0 0.5rem;">${p.titulo || 'Métricas y Seguimiento'}</h2>
+    <div style="height:3px;background:linear-gradient(to right,#008541,#f9c540,#c0392b);width:9rem;margin-bottom:0.75rem;"></div>
+    ${p.descripcion ? `<p style="color:#4b5563;font-size:0.875rem;line-height:1.6;margin:0;">${p.descripcion}</p>` : ''}
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.25rem;">
+    ${cards}
+  </div>
+</section>`;
+    }
+  },
+
+  // ─────────────────────────────────────────────
+  // BLOQUE PREHECHO: Línea de Tiempo / Cronograma Institucional
+  // ─────────────────────────────────────────────
+  {
+    id: "linea-tiempo",
+    name: "Línea de Tiempo / Hitos",
+    category: "prehechos",
+    icon: "⏳",
+    description: "Cronograma cronológico interactivo con etapas, fechas e hitos de gestión.",
+    fields: [
+      { key: "badge",       label: "Etiqueta superior",     type: "text", default: "CRONOGRAMA DE GESTIÓN" },
+      { key: "titulo",      label: "Título de la Línea",    type: "text", default: "Etapas y Cronograma Estratégico" },
+      { key: "descripcion", label: "Descripción",           type: "textarea", default: "Evolución cronológica de los proyectos, consultas y resoluciones institucionales." },
+      { key: "hitos",       label: "Hitos (JSON)",          type: "textarea", placeholder: '[{"periodo":"2024-2025","titulo":"Diagnóstico Participativo","detalle":"Encuestas y talleres","estado":"completado"}]' }
+    ],
+    render(p) {
+      let hitos = [];
+      try {
+        hitos = typeof p.hitos === 'string' ? JSON.parse(p.hitos || '[]') : (p.hitos || []);
+      } catch(e) {
+        hitos = [];
+      }
+
+      if (!Array.isArray(hitos) || hitos.length === 0) {
+        hitos = [
+          { periodo: "2024–2025", titulo: "Autoevaluación y Diagnóstico Integral", detalle: "Relevamiento de encuestas en todos los claustros y sistematización de 6 dimensiones estratégicas.", estado: "completado" },
+          { periodo: "Julio 2026", titulo: "Aprobación del PDI por el Consejo Superior", detalle: "Sanción unánime de la Resolución RESHCS: 492/2026 que fija las metas decenales al 2036.", estado: "completado" },
+          { periodo: "2026–2027", titulo: "Despliegue del Sistema SIAC", detalle: "Puesta en funcionamiento de la Unidad de Calidad Institucional y comisiones por departamento.", estado: "en-curso" },
+          { periodo: "2028–2036", titulo: "Monitoreo Decenal y Evaluación de Medio Término", detalle: "Seguimiento periódico de los 137 proyectos prioritarios con metas cuantitativas verificables.", estado: "planificado" }
+        ];
+      }
+
+      const timelineItems = hitos.map((h, idx) => {
+        const isLast = idx === hitos.length - 1;
+        const statusColor = h.estado === 'completado' ? '#008541' : (h.estado === 'en-curso' ? '#b07d2c' : '#64748b');
+        const statusLabel = h.estado === 'completado' ? 'Completado' : (h.estado === 'en-curso' ? 'En ejecución' : 'Proyectado');
+        const statusBg = h.estado === 'completado' ? '#ecfdf5' : (h.estado === 'en-curso' ? '#fefce8' : '#f1f5f9');
+
+        return `<div style="display:flex;gap:1.25rem;position:relative;">
+  <!-- Columna del punto y línea -->
+  <div style="display:flex;flex-direction:column;align-items:center;">
+    <div style="width:1.5rem;height:1.5rem;border-radius:9999px;background:${statusColor};color:white;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;z-index:2;box-shadow:0 0 0 4px #ffffff;">
+      ${idx + 1}
+    </div>
+    ${!isLast ? `<div style="width:2px;background:#cbd5e1;flex:1;margin:0.25rem 0;"></div>` : ''}
+  </div>
+
+  <!-- Contenido del hito -->
+  <div style="flex:1;background:#ffffff;border:1px solid #e2e8f0;border-radius:0.75rem;padding:1.25rem;margin-bottom:1.5rem;box-shadow:0 1px 3px rgba(0,0,0,0.03);">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:0.75rem;margin-bottom:0.35rem;flex-wrap:wrap;">
+      <span style="font-size:0.8125rem;font-weight:700;color:${statusColor};">${h.periodo || ''}</span>
+      <span style="font-size:0.6875rem;font-weight:700;text-transform:uppercase;padding:0.15rem 0.5rem;border-radius:9999px;background:${statusBg};color:${statusColor};">${statusLabel}</span>
+    </div>
+    <h3 style="font-size:1.0625rem;font-weight:700;color:#0f172a;font-family:Georgia,serif;margin:0 0 0.35rem;">${h.titulo || ''}</h3>
+    <p style="font-size:0.8125rem;color:#475569;margin:0;line-height:1.5;">${h.detalle || ''}</p>
+  </div>
+</div>`;
+      }).join('');
+
+      return `<section style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:1rem;padding:2rem 2.25rem;margin-bottom:2.5rem;box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+  <div style="margin-bottom:1.75rem;">
+    <span style="display:inline-block;font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#b07d2c;margin-bottom:0.25rem;">${p.badge || 'CRONOGRAMA'}</span>
+    <h2 style="font-size:1.5rem;font-weight:700;color:#111827;font-family:Georgia,serif;margin:0 0 0.5rem;">${p.titulo || 'Línea de Tiempo Institucional'}</h2>
+    <div style="height:3px;background:linear-gradient(to right,#008541,#f9c540,#c0392b);width:9rem;margin-bottom:0.75rem;"></div>
+    ${p.descripcion ? `<p style="color:#4b5563;font-size:0.875rem;line-height:1.6;margin:0;">${p.descripcion}</p>` : ''}
+  </div>
+  <div>
+    ${timelineItems}
+  </div>
+</section>`;
+    }
+  },
+
+  // ─────────────────────────────────────────────
+  // BLOQUE PREHECHO: Grilla de Medios (Videos, Audios, Noticias)
   // ─────────────────────────────────────────────
   {
     id: "grilla-medios",
@@ -206,7 +413,7 @@ export const BLOCK_REGISTRY = [
   },
 
   // ─────────────────────────────────────────────
-  // BLOQUE PREHECHO 4: Tarjeta de Enlace Destacado
+  // BLOQUE PREHECHO: Tarjeta de Enlace Destacado
   // ─────────────────────────────────────────────
   {
     id: "link-card",
@@ -229,7 +436,7 @@ export const BLOCK_REGISTRY = [
   },
 
   // ─────────────────────────────────────────────
-  // BLOQUE PREHECHO 5: Tarjeta de Atención al Público y Mapa
+  // BLOQUE PREHECHO: Tarjeta de Atención al Público y Mapa
   // ─────────────────────────────────────────────
   {
     id: "card-atencion-mapa",
@@ -279,7 +486,7 @@ export const BLOCK_REGISTRY = [
 
   <!-- BARRITA TEASER COLAPSADA -->
   <div class="map-teaser-bar" onclick="toggleMapExpandFromTeaser(this)" style="position:relative;height:3rem;background:#005c2e;cursor:pointer;overflow:hidden;display:flex;align-items:center;justify-content:center;">
-    <img src="${imagenMapa}" alt="Teaser mapa" style="position:absolute;inset:0;width:100%;height:12rem;object-fit:cover;object-position:top;opacity:0.3;filter:blur(1px);margin-top:-2.5rem;" />
+    <img src="${imagenMapa}" alt="Teaser mapa del campus UNLu" style="position:absolute;inset:0;width:100%;height:12rem;object-fit:cover;object-position:top;opacity:0.3;filter:blur(1px);margin-top:-2.5rem;" />
     <div style="position:relative;z-index:10;display:flex;align-items:center;gap:0.5rem;color:#f9c540;font-size:0.6875rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;">
       <svg style="width:0.75rem;height:0.75rem;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
       <span>VER MAPA DEL CAMPUS</span>
@@ -297,7 +504,7 @@ export const BLOCK_REGISTRY = [
       </span>
     </div>
     <div style="position:relative;border-radius:0.75rem;overflow:hidden;border:1px solid #cbd5e1;background:#f8fafc;padding:0.5rem;">
-      <img src="${imagenMapa}" alt="Mapa del Campus UNLu" style="width:100%;height:auto;display:block;border-radius:0.5rem;" />
+      <img src="${imagenMapa}" alt="Mapa del Campus Universitario UNLu con indicación de Rectorado y dependencias" style="width:100%;height:auto;display:block;border-radius:0.5rem;" />
       <div style="position:absolute;bottom:1.5rem;right:1.5rem;background-color:#008541;color:white;font-weight:800;font-size:0.75rem;padding:0.5rem 1rem;border-radius:9999px;box-shadow:0 4px 10px rgba(0,0,0,0.2);display:flex;align-items:center;gap:0.375rem;">
         <span style="background:#f9c540;color:#008541;width:1.25rem;height:1.25rem;border-radius:9999px;display:inline-flex;align-items:center;justify-content:center;font-size:0.6875rem;font-weight:900;">8</span>
         <span>Aquí nos encontrás</span>
@@ -309,7 +516,7 @@ export const BLOCK_REGISTRY = [
   },
 
   // ─────────────────────────────────────────────
-  // BLOQUE PREHECHO 6: Formulario de Consulta Institucional
+  // BLOQUE PREHECHO: Formulario de Consulta Institucional
   // ─────────────────────────────────────────────
   {
     id: "card-formulario-contacto",
@@ -339,7 +546,7 @@ export const BLOCK_REGISTRY = [
   },
 
   // ─────────────────────────────────────────────
-  // BLOQUE PREHECHO 7: Separador de Sección
+  // BLOQUE PREHECHO: Separador de Sección
   // ─────────────────────────────────────────────
   {
     id: "separator",
@@ -348,7 +555,7 @@ export const BLOCK_REGISTRY = [
     icon: "—",
     description: "Divisor decorativo de puntos entre secciones.",
     fields: [],
-    render() { return `<div style="text-align:center;color:#cbd5e1;letter-spacing:0.35em;font-size:0.75rem;user-select:none;margin:2rem 0;">.................................................................................</div>`; }
+    render() { return `<div style="text-align:center;color:#cbd5e1;letter-spacing:0.35em;font-size:0.75rem;user-select:none;margin:2rem 0;" aria-hidden="true">.................................................................................</div>`; }
   }
 
 ];

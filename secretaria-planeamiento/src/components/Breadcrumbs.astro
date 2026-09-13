@@ -1,0 +1,87 @@
+---
+/**
+ * Componente: Breadcrumbs Institucionales
+ * Navegación jerárquica accesible con Schema.org microdata (BreadcrumbList)
+ */
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+  class?: string;
+  theme?: "dark" | "light";
+}
+
+const { items, class: className = "", theme = "dark" } = Astro.props;
+
+const allItems: BreadcrumbItem[] = [
+  { label: "Inicio", href: "/" },
+  ...items
+];
+---
+
+<nav aria-label="Ruta de navegación (Breadcrumbs)" class:list={["pb-4", className]}>
+  <ol 
+    class:list={[
+      "flex flex-wrap items-center gap-1.5 text-xs sm:text-sm",
+      theme === "dark" ? "text-white/75" : "text-gray-600"
+    ]}
+    itemscope 
+    itemtype="https://schema.org/BreadcrumbList"
+  >
+    {allItems.map((item, index) => {
+      const isLast = index === allItems.length - 1;
+      const position = index + 1;
+
+      return (
+        <li 
+          class="inline-flex items-center gap-1.5"
+          itemprop="itemListElement" 
+          itemscope 
+          itemtype="https://schema.org/ListItem"
+        >
+          {index > 0 && (
+            <svg 
+              class:list={["w-3.5 h-3.5 shrink-0 select-none", theme === "dark" ? "text-white/40" : "text-gray-400"]}
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor" 
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          )}
+
+          {isLast || !item.href ? (
+            <span 
+              class:list={[
+                "font-semibold truncate max-w-[280px] sm:max-w-none",
+                theme === "dark" ? "text-white" : "text-gray-900"
+              ]}
+              aria-current="page"
+              itemprop="name"
+            >
+              {item.label}
+            </span>
+          ) : (
+            <a 
+              href={item.href}
+              class:list={[
+                "hover:underline transition-colors focus:outline-none focus:ring-2 focus:ring-offset-1 rounded-xs",
+                theme === "dark" 
+                  ? "hover:text-white focus:ring-unlu-gold text-white/80" 
+                  : "hover:text-unlu-green focus:ring-unlu-green text-gray-700"
+              ]}
+              itemprop="item"
+            >
+              <span itemprop="name">{item.label}</span>
+            </a>
+          )}
+          <meta itemprop="position" content={position.toString()} />
+        </li>
+      );
+    })}
+  </ol>
+</nav>
